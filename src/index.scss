@@ -1,0 +1,190 @@
+@import "react-tooltip/dist/react-tooltip.css";
+@import "react-datepicker/dist/react-datepicker.css";
+@import "react-toastify/dist/ReactToastify.css";
+@import "swiper/css";
+@import "swiper/css/free-mode";
+@import "swiper/css/navigation";
+@import "swiper/css/thumbs";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none;
+  }
+}
+
+body {
+  @apply font-source-sans-pro text-slate-700;
+}
+
+*:not([class]) {
+  ::-webkit-scrollbar {
+    @apply w-4 bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-4 border-solid border-gray-100 bg-black bg-opacity-60 hover:bg-opacity-40;
+  }
+}
+
+.overflow-overlay::-webkit-scrollbar {
+  width: 16px;
+}
+
+.Toastify__toast-container.Toastify__toast-container--top-right {
+  @apply w-96 p-0 shadow-none;
+
+  .Toastify__toast {
+    @apply relative overflow-hidden rounded-lg px-4 py-2;
+  }
+
+  .Toastify__toast-body {
+    @apply pr-6;
+  }
+
+  .Toastify__close-button {
+    @apply absolute right-4 top-5 z-0 flex h-6 w-6 items-center justify-center rounded-full pl-px text-slate-700;
+
+    svg {
+      @apply w-3;
+    }
+  }
+
+  .Toastify__progress-bar.Toastify__progress-bar--animated {
+    @apply absolute bottom-0 right-0 top-0 -z-10 h-full;
+
+    &.Toastify__progress-bar--success {
+      @apply bg-green-50;
+    }
+
+    &.Toastify__progress-bar--error {
+      @apply bg-red-100;
+    }
+  }
+}
+
+.react-select {
+  &__indicators {
+    @apply translate-y-0.5;
+
+    span {
+      @apply hidden;
+    }
+  }
+
+  &__value-container {
+    @apply -translate-x-4.5 translate-y-0.5;
+  }
+}
+
+.react-datepicker {
+  &__header,
+  &__month {
+    @apply p-2;
+  }
+
+  &__header:not(.react-datepicker__header--has-time-select) {
+    @apply rounded-none border-gray-200 bg-white;
+  }
+
+  &__navigation-icon {
+    @apply top-1.5 before:border-blue-500;
+  }
+
+  &__current-month,
+  &__day-name {
+    @apply text-blue-500;
+  }
+
+  &__month {
+    @apply m-0;
+  }
+
+  &__day--in-selecting-range:not(
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--in-range
+    ) {
+    @apply bg-blue-100 text-black hover:bg-blue-100;
+  }
+
+  &__day-name,
+  &__day {
+    @apply w-7 text-xs leading-7;
+
+    &--in-selecting-range,
+    &--in-range {
+      @apply bg-blue-100 text-black hover:bg-blue-100;
+    }
+
+    &--selected,
+    &--range-end {
+      @apply bg-blue-500 font-medium text-white hover:rounded-full hover:bg-blue-500 hover:text-white #{!important};
+    }
+
+    &--selected {
+      @apply rounded-l-full;
+    }
+
+    &--range-end {
+      @apply rounded-r-full;
+    }
+  }
+}
+
+.no-click-flicking {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  @apply select-none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #f3f4f6;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-rendering: auto;
+
+  &::after {
+    font-size: 16px;
+    color: #1a94ff;
+    font-weight: 700;
+  }
+}
+
+.swiper-button-next {
+  right: 0px;
+
+  &::after {
+    margin-left: 2px;
+  }
+}
+
+.swiper-button-prev {
+  left: 0px;
+
+  &::after {
+    margin-left: -2px;
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+// .swiper-slide-thumb-active {
+//   opacity: 1;
+// }
