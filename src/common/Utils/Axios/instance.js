@@ -17,6 +17,7 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
     "Accept-Language": getPageLanguage(),
+    "Access-Control-Allow-Origin": baseURL,
   },
   withCredentials: true,
 });
