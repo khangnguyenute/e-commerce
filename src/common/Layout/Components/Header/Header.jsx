@@ -45,7 +45,7 @@ const Header = () => {
           </div>
         </div>
 
-        {Boolean(user) && !isAdmin && <HeaderMenu />}
+        {!isAdmin && <HeaderMenu />}
 
         <div className="flex h-full w-fit items-center">
           {isEmpty(user) ? (
