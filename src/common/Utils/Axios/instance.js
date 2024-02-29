@@ -17,7 +17,6 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
     "Accept-Language": getPageLanguage(),
-    "Access-Control-Allow-Origin": baseURL,
   },
   withCredentials: true,
 });
@@ -25,6 +24,9 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (request) => {
     set(request, "headers.Authorization", `Bearer ${authService.getAccessToken()}`);
+    request.headers("Access-Control-Allow-Origin", "*");
+    request.headers("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
+    request.headers("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const { params, url } = request;
 
