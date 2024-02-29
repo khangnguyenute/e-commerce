@@ -19,7 +19,7 @@ const axiosInstance = axios.create({
     "Accept-Language": getPageLanguage(),
     "Access-Control-Allow-Origin": baseURL,
     "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Headers": "*",
   },
   withCredentials: true,
 });
