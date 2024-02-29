@@ -10,31 +10,20 @@ import { getPageLanguage } from "@services/languageService";
 export const baseURL = "https://kpshop-backend-5yfh.onrender.com";
 
 const axiosInstance = axios.create({
-  // baseURL,
-  // timeout: 30000,
-  // responseEncoding: "utf8",
-  // headers: {
-  //   "Content-Type": "application/json",
-  //   Accept: "application/json",
-  //   "Accept-Language": getPageLanguage(),
-  //   "Access-Control-Allow-Origin": baseURL,
-  //   "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
-  //   "Access-Control-Allow-Headers": "*",
-  // },
-  // withCredentials: true,
   baseURL,
+  timeout: 30000,
+  responseEncoding: "utf8",
   headers: {
-    "Access-Control-Allow-Credentials": true,
-    "Content-type": "application/json",
-    "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    "Accept-Language": getPageLanguage(),
   },
-  credentials: "include",
   withCredentials: true,
 });
 
 axiosInstance.interceptors.request.use(
   (request) => {
-    // set(request, "headers.Authorization", `Bearer ${authService.getAccessToken()}`);
+    set(request, "headers.Authorization", `Bearer ${authService.getAccessToken()}`);
 
     const { params, url } = request;
 
