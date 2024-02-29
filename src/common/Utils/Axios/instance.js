@@ -8,7 +8,6 @@ import errorHandler from "./errorHandler.js";
 import { getPageLanguage } from "@services/languageService";
 
 export const baseURL = "https://kpshop-backend-5yfh.onrender.com";
-// export const baseURL = "http://localhost:8000";
 
 const axiosInstance = axios.create({
   baseURL,
@@ -18,6 +17,7 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
     "Accept-Language": getPageLanguage(),
+    "Access-Control-Allow-Origin": baseURL,
   },
   withCredentials: true,
 });
