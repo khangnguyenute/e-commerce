@@ -38,7 +38,7 @@ const ProfileAccountSecurityModificationPassword = () => {
     try {
       await userService.updateUserById(user._id, pick(formData, ["password", "newPassword"]));
 
-      toast.success(t("editPasswordSuccessfully"));
+      toast.success(t("changePasswordSuccessfully"));
     } catch (error) {
       toast.error(t("unknown"));
     } finally {
@@ -51,7 +51,7 @@ const ProfileAccountSecurityModificationPassword = () => {
     reset(DEFAULT_VALUE);
   }, [reset]);
 
-  useDocumentTitle(t("editPassword"));
+  useDocumentTitle(t("changePassword"));
 
   return (
     <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>

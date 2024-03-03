@@ -36,7 +36,7 @@ const ProfileAccountSecurityModificationPhone = () => {
     try {
       await userService.updateUserById(user._id, pick(formData, "phone"));
 
-      toast.success(t("editPhoneSuccessfully"));
+      toast.success(t("changePhoneSuccessfully"));
     } catch (error) {
       toast.error(t("unknown"));
     } finally {
@@ -49,7 +49,7 @@ const ProfileAccountSecurityModificationPhone = () => {
     reset(DEFAULT_VALUE);
   }, [reset]);
 
-  useDocumentTitle(t("editPhone"));
+  useDocumentTitle(t("changePhone"));
 
   return (
     <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>

@@ -18,14 +18,14 @@ const HeaderUserDropdownItem = ({ onClick }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleClickLogout = useCallback(() => {
+  const handleClickLogout = useCallback(async () => {
     if (isSubmitting) {
       return;
     }
     setIsSubmitting(true);
 
     try {
-      authService.logOut();
+      await authService.logOut();
     } catch (error) {
       toast.error(t("unknown"));
     } finally {
