@@ -73,7 +73,7 @@ const Cart = () => {
 
     const newData = {
       _id: Date.now(),
-      customerId: user?.userId,
+      customerId: user?._id,
       ...formData,
       receiver: "",
       payment: {

@@ -29,7 +29,7 @@ const ProfileOrderHistoryContainer = ({ status, queryParam, onChangeState, onGet
     try {
       const { data, meta } = await onGetOrderHistories({
         ...queryParam,
-        customerId: currentUser?.userId,
+        customerId: currentUser?._id,
         status,
       });
 
@@ -41,7 +41,7 @@ const ProfileOrderHistoryContainer = ({ status, queryParam, onChangeState, onGet
       setIsLoading(false);
       isFirstRef.current = false;
     }
-  }, [currentUser?.userId, onGetOrderHistories, queryParam, status, t, toast]);
+  }, [currentUser?._id, onGetOrderHistories, queryParam, status, t, toast]);
 
   useEffect(() => {
     if (!isFirstRef.current) {
