@@ -24,7 +24,7 @@ const ProfileAccountSecurity = () => {
 
   const handleUpdatePassword = useCallback(() => {
     if (!currentUser?.email) {
-      navigate(PROFILE_PATH.EDIT_ACCOUNT("mail"));
+      navigate(PROFILE_PATH.EDIT_ACCOUNT("email"));
       toast.info(t("updatePasswordAlert"));
       return;
     }
@@ -37,7 +37,7 @@ const ProfileAccountSecurity = () => {
   }, [navigate]);
 
   const handleUpdateEmail = useCallback(() => {
-    navigate(PROFILE_PATH.EDIT_ACCOUNT("mail"));
+    navigate(PROFILE_PATH.EDIT_ACCOUNT("email"));
   }, [navigate]);
 
   const handleConnectFacebook = async () => {

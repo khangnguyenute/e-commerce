@@ -1,8 +1,10 @@
+import { omit } from "lodash";
 import { ORDER_PATH } from "../Constants";
 import { axiosInstance } from "@utils/Axios";
 
 const getOrders = async (params) => {
-  const response = await axiosInstance.get(ORDER_PATH.ORDERS, { params });
+  const newParams = params?.status === "all" ? omit(params, "status") : params;
+  const response = await axiosInstance.get(ORDER_PATH.ORDERS, { params: newParams });
 
   return {
     data: response.data.data,

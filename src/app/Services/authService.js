@@ -4,8 +4,8 @@ import { AUTH_API_PATH } from "../Constants";
 const getMe = async () =>
   new Promise((resolve, reject) => {
     const user = localStorage.getItem("user");
-    if (!user) {
-      resolve();
+    if (user) {
+      resolve(JSON.parse(user));
     } else {
       reject();
     }

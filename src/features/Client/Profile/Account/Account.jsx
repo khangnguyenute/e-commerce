@@ -2,7 +2,7 @@ import useDocumentTitle from "@hooks/useDocumentTitle";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import ProfileAccountInformation from "./Information";
-import ProfileAccountSecurity from "./Security";
+import ProfileAccountSecurity from "./Security/Security";
 
 const ProfileAccount = () => {
   const { t } = useTranslation();

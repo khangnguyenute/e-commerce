@@ -4,7 +4,7 @@ import { FiHelpCircle, FiLogOut, FiSettings } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authService } from "@services/index";
-import { PROFILE_PATH } from "@constants/routeConstant";
+import { ADMIN_PATH, CLIENT_PATH, PROFILE_PATH } from "@constants/routeConstant";
 import useToast from "@hooks/useToast";
 import { setUser } from "@slices/commonSlice";
 
@@ -15,7 +15,6 @@ const HeaderUserDropdownItem = ({ onClick }) => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.common.user);
-  console.log(user);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -36,7 +35,11 @@ const HeaderUserDropdownItem = ({ onClick }) => {
   }, [dispatch, isSubmitting, t, toast]);
 
   const handleClickDashboard = useCallback(() => {
-    navigate(user.role);
+    if (user.role === "admin") {
+      navigate(ADMIN_PATH.HOME);
+      return;
+    }
+    navigate(CLIENT_PATH.HOME);
   }, [navigate, user.role]);
 
   return (

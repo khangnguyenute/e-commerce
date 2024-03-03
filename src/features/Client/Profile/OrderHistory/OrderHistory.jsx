@@ -13,7 +13,7 @@ const ProfileOrderHistory = ({ tab: defaultActivatedTab }) => {
   const navigate = useNavigate();
   const { tab: activatedTabParam } = useParams();
 
-  const [queryParams, setQueryParams] = useState(null);
+  const [queryParam, setQueryParam] = useState(null);
 
   const activatedTab = useMemo(
     () => defaultActivatedTab ?? activatedTabParam,
@@ -57,38 +57,38 @@ const ProfileOrderHistory = ({ tab: defaultActivatedTab }) => {
       >
         <ProfileOrderHistoryContainer
           status="all"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
         <ProfileOrderHistoryContainer
           status="processing"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
         <ProfileOrderHistoryContainer
           status="packed"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
         <ProfileOrderHistoryContainer
           status="inTransit"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
         <ProfileOrderHistoryContainer
           status="delivered"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
         <ProfileOrderHistoryContainer
           status="canceled"
-          queryParams={queryParams}
-          onChangeState={setQueryParams}
+          queryParam={queryParam}
+          onChangeState={setQueryParam}
           onGetOrderHistories={orderService.getOrders}
         />
       </ContentWrapper>

@@ -2,7 +2,6 @@ import { memo } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../Home";
 import { Order } from "../Order";
-import Forget from "../Home/Forget";
 import { ProductDetail } from "@client/ProductDetail";
 import { Product } from "@client/Product";
 import { Profile } from "@client/Profile";
@@ -18,11 +17,7 @@ const ClientRoutes = () => {
       <Route path="tablet/:id" element={<ProductDetail />} />
       <Route path="laptop" element={<Product category="Laptop" />} />
       <Route path="laptop/:id" element={<ProductDetail />} />
-      {/* 
-      <Route path="profile/edit/password" element={<Manage path="password" />} />
-      */}
       <Route path="order" element={<Order title="Xác nhận đơn hàng " />} />
-      <Route path="forget-password/:id" element={<Forget path="orderdetail" />} />
       <Route path="my/*" element={<Profile />} />
       <Route path="*" element={<Home title="home" />} />
     </Routes>

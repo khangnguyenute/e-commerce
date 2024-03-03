@@ -11,7 +11,6 @@ export const baseURL = "https://kpshop-backend-5yfh.onrender.com";
 
 const axiosInstance = axios.create({
   baseURL,
-  timeout: 30000,
   responseEncoding: "utf8",
   headers: {
     "Content-Type": "application/json",

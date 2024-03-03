@@ -74,8 +74,8 @@ const ProfileAccountInformation = () => {
         onClick={handleShowChangeProfileModal}
       >
         <Avatar
-          src={currentUser.image}
-          alt={currentUser.fullname}
+          src={currentUser?.image}
+          alt={currentUser?.fullname}
           className="h-32 w-32"
           imageClassName="h-32 w-32"
         />

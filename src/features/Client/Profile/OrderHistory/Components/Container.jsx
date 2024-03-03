@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import useDocumentTitle from "@hooks/useDocumentTitle";
 import { useTranslation } from "react-i18next";
@@ -9,9 +9,10 @@ import ProfileOrderHistoryGridSkeleton from "./GridSkeleton";
 import { isEmpty } from "lodash";
 import { TableContentBodyEmptyItem } from "@common/Components";
 
-const ProfileOrderHistoryContainer = ({ status, queryParams, onChangeState, onGetOrderHistories }) => {
+const ProfileOrderHistoryContainer = ({ status, queryParam, onChangeState, onGetOrderHistories }) => {
   const { t } = useTranslation();
   const toast = useToast();
+  const isFirstRef = useRef(true);
 
   const currentUser = useSelector((state) => state.common.user);
 
@@ -20,26 +21,17 @@ const ProfileOrderHistoryContainer = ({ status, queryParams, onChangeState, onGe
   const [totalRows, setTotalRows] = useState(0);
 
   const getOrders = useCallback(async () => {
-    if (!queryParams) {
+    if (!queryParam) {
       return;
     }
     setIsLoading(true);
 
-    let service = onGetOrderHistories({
-      ...queryParams,
-      customerId: currentUser?.userId,
-    });
-
-    if (status !== "all") {
-      service = onGetOrderHistories({
-        ...queryParams,
-        customerId: currentUser?.userId,
-        status: status,
-      });
-    }
-
     try {
-      const { data, meta } = await service;
+      const { data, meta } = await onGetOrderHistories({
+        ...queryParam,
+        customerId: currentUser?.userId,
+        status,
+      });
 
       setOrderData(data);
       setTotalRows(meta.total);
@@ -47,10 +39,14 @@ const ProfileOrderHistoryContainer = ({ status, queryParams, onChangeState, onGe
       toast.error(t("unknown"));
     } finally {
       setIsLoading(false);
+      isFirstRef.current = false;
     }
-  }, [currentUser?.userId, onGetOrderHistories, queryParams, status, t, toast]);
+  }, [currentUser?.userId, onGetOrderHistories, queryParam, status, t, toast]);
 
   useEffect(() => {
+    if (!isFirstRef.current) {
+      return;
+    }
     getOrders();
   }, [getOrders]);
 

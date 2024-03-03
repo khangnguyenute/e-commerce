@@ -58,28 +58,6 @@ const CommonRoutes = () => {
     }
   }, [dispatch, excludeGetUserPaths, excludeRedirectPaths, location.pathname, navigate, user]);
 
-  // useLayoutEffect(() => {
-  //   setIsLoading(true);
-
-  //   if (localUser) {
-  //     if (!user) {
-  //       dispatch(setUser(JSON.parse(localUser)));
-  //     }
-  //     setIsLoading(false);
-  //     return;
-  //   }
-
-  //   const isMatchedExcludeRedirectPath = excludeRedirectPaths.some((path) =>
-  //     matchPath(path, location.pathname),
-  //   );
-
-  //   if (!isMatchedExcludeRedirectPath) {
-  //     const from = location.pathname;
-  //     navigate(`${AUTH_PATH.LOGIN}?from=${from}`);
-  //   }
-  //   setIsLoading(false);
-  // }, [dispatch, excludeRedirectPaths, isLoading, localUser, location, navigate, user]);
-
   if (isLoading) {
     return <LoadingOverlay />;
   }
