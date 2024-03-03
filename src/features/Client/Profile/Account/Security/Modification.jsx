@@ -11,13 +11,13 @@ const ProfileAccountSecurityModification = () => {
 
   const title = useMemo(() => {
     if (tab === "password") {
-      return t("editPassword");
+      return t("changePassword");
     }
     if (tab === "email") {
-      return t("editEmail");
+      return t("changeEmail");
     }
     if (tab === "phone") {
-      return t("editPhone");
+      return t("changePhone");
     }
   }, [t, tab]);
 

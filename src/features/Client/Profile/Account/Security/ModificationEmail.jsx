@@ -36,7 +36,7 @@ const ProfileAccountSecurityModificationEmail = () => {
     try {
       await userService.updateUserById(user._id, pick(formData, "email"));
 
-      toast.success(t("editEmailSuccessfully"));
+      toast.success(t("changeEmailSuccessfully"));
     } catch (error) {
       toast.error(t("unknown"));
     } finally {
@@ -49,7 +49,7 @@ const ProfileAccountSecurityModificationEmail = () => {
     reset(DEFAULT_VALUE);
   }, [reset]);
 
-  useDocumentTitle(t("editEmail"));
+  useDocumentTitle(t("changeEmail"));
 
   return (
     <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>

@@ -45,11 +45,12 @@ const resetPassword = async (email, data) => {
 };
 
 const logOut = async () =>
-  new Promise(() => {
+  new Promise((resolve) => {
     setTimeout(() => {
       removeAccessToken();
       removeLocalUser();
       localStorage.removeItem("cartItems");
+      resolve();
     }, 1000);
   });
 
