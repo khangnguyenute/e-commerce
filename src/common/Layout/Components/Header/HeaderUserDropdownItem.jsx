@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { authService } from "@services/index";
 import { ADMIN_PATH, CLIENT_PATH, PROFILE_PATH } from "@constants/routeConstant";
 import useToast from "@hooks/useToast";
-import { setUser } from "@slices/commonSlice";
+import { clearCart, setUser } from "@slices/commonSlice";
 
 const HeaderUserDropdownItem = ({ onClick }) => {
   const { t } = useTranslation();
@@ -26,13 +26,15 @@ const HeaderUserDropdownItem = ({ onClick }) => {
 
     try {
       await authService.logOut();
+      dispatch(setUser(undefined));
+      dispatch(clearCart());
     } catch (error) {
       toast.error(t("unknown"));
     } finally {
       setIsSubmitting(false);
-      dispatch(setUser(undefined));
+      navigate(CLIENT_PATH.HOME);
     }
-  }, [dispatch, isSubmitting, t, toast]);
+  }, [dispatch, isSubmitting, navigate, t, toast]);
 
   const handleClickDashboard = useCallback(() => {
     if (user.role === "admin") {

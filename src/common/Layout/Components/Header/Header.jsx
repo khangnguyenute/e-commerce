@@ -55,7 +55,7 @@ const Header = () => {
               <HeaderUserDropdown />
             </div>
           )}
-          {Boolean(user) && (
+          {!isAdmin && (
             <div
               role="button"
               tabIndex={0}
