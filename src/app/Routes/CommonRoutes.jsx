@@ -1,5 +1,4 @@
 import { LoadingOverlay } from "@common/Components";
-import { AUTH_PATH } from "@constants/routeConstant";
 import { setUser } from "@slices/commonSlice";
 import { memo, useLayoutEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,6 +29,15 @@ const CommonRoutes = () => {
     const isMatchedExcludeRedirectPath = excludeRedirectPaths.some((path) =>
       matchPath(path, location.pathname),
     );
+
+    if (isMatchedExcludeRedirectPath) {
+      authService.removeAccessToken();
+      authService.removeLocalUser();
+      dispatch(setUser(undefined));
+      setIsLoading(false);
+      return;
+    }
+
     const isMatchedGetUserExcludePath = excludeGetUserPaths.some((path) =>
       matchPath(path, location.pathname),
     );
@@ -43,15 +51,9 @@ const CommonRoutes = () => {
       authService
         .getMe()
         .then((data) => {
-          return dispatch(setUser(data));
+          dispatch(setUser(data));
         })
-        .catch(() => {
-          if (isMatchedExcludeRedirectPath) {
-            return;
-          }
-          const from = location.pathname;
-          navigate(`${AUTH_PATH.LOGIN}?from=${from}`);
-        })
+        .catch(() => {})
         .finally(() => {
           setIsLoading(false);
         });

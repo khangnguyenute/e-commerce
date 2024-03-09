@@ -2,7 +2,7 @@ import { memo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useFormContext } from "react-hook-form";
 import useToast from "@hooks/useToast";
-import { Button, Checkbox, Input } from "@common/Components";
+import { Button, Input } from "@common/Components";
 import { beautifyNumber } from "@utils/Helpers";
 import { voucherService } from "@services/index";
 import { Trans, useTranslation } from "react-i18next";
@@ -64,22 +64,15 @@ const CartOrder = ({ discount, totalPrice, isSubmitting, onApplyDiscount, onSubm
       <Button onClick={onSubmit} type="submit" className="w-full">
         {t("order")}
       </Button>
-      <label htmlFor="isAcceptedOrderTerms" className="group flex items-start justify-start space-x-4">
-        <Checkbox
-          name="isAcceptedOrderTerms"
-          className="flex-shrink-0"
-          disabled={isSubmitting}
-          control={control}
-        />
-        <div className="text-xs font-semibold leading-6 text-gray-400">
-          <Trans i18nKey="isAcceptedOrderTerms" t={t}>
-            0
-            <Link to="/" className="ml-1 underline hover:text-black">
-              1
-            </Link>
-          </Trans>
-        </div>
-      </label>
+
+      <div className="text-xs font-semibold leading-6 text-gray-400">
+        <Trans i18nKey="isAcceptedOrderTerms" t={t}>
+          0
+          <Link to="/" className="ml-1 underline hover:text-black">
+            1
+          </Link>
+        </Trans>
+      </div>
     </div>
   );
 };

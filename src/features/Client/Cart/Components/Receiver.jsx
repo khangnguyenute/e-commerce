@@ -105,8 +105,16 @@ const CartReceiver = ({ isSubmitting }) => {
         disabled={isSubmitting}
         label={t("fullname")}
         name="fullname"
+        isRequired
       />
-      <Input className="block" control={control} disabled={isSubmitting} label={t("phone")} name="phone" />
+      <Input
+        className="block"
+        control={control}
+        disabled={isSubmitting}
+        label={t("phone")}
+        name="phone"
+        isRequired
+      />
       <Select
         className="text-normal"
         name="city"
@@ -140,6 +148,7 @@ const CartReceiver = ({ isSubmitting }) => {
         disabled={isSubmitting}
         label={t("address")}
         name="address"
+        isRequired
       />
     </div>
   );
