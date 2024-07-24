@@ -1,11 +1,10 @@
 import { Logo } from "@common/Components/Logo";
 import { isEmpty } from "lodash";
-import { memo, useCallback, useMemo, useRef } from "react";
+import { memo, useCallback, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import HeaderLoginButton from "./HeaderLoginButton";
 import HeaderUserDropdown from "./HeaderUserDropdown";
-import HeaderLanguageSelector from "./HeaderLanguageSelector";
 import HeaderMenu from "./HeaderMenu";
 import HeaderCart from "./HeaderCart";
 import { CLIENT_PATH } from "@constants/routeConstant";
@@ -15,13 +14,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const user = useSelector((state) => state.common.user);
-
-  const isAdmin = useMemo(() => {
-    if (!user) {
-      return false;
-    }
-    return user.role === "admin";
-  }, [user]);
 
   const handleClickLogo = useCallback(() => {
     navigate(CLIENT_PATH.HOME);
@@ -45,7 +37,7 @@ const Header = () => {
           </div>
         </div>
 
-        {!isAdmin && <HeaderMenu />}
+        <HeaderMenu />
 
         <div className="flex h-full w-fit items-center">
           {isEmpty(user) ? (
@@ -55,17 +47,14 @@ const Header = () => {
               <HeaderUserDropdown />
             </div>
           )}
-          {!isAdmin && (
-            <div
-              role="button"
-              tabIndex={0}
-              className="flex text-sm text-blue-500 hover:text-blue-700"
-              onClick={handleClickCart}
-            >
-              <HeaderCart />
-            </div>
-          )}
-          <HeaderLanguageSelector />
+          <div
+            role="button"
+            tabIndex={0}
+            className="flex text-sm text-blue-500 hover:text-blue-700"
+            onClick={handleClickCart}
+          >
+            <HeaderCart />
+          </div>
         </div>
       </div>
     </div>

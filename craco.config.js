@@ -18,7 +18,6 @@ module.exports = {
       "@utils": path.resolve(__dirname, "src/common/Utils"),
       "@common": path.resolve(__dirname, "src/common"),
       "@auth": path.resolve(__dirname, "src/features/Auth"),
-      "@admin": path.resolve(__dirname, "src/features/Admin"),
       "@client": path.resolve(__dirname, "src/features/Client"),
     },
   },

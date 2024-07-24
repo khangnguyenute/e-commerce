@@ -1,26 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { set } from "lodash";
 
-import vietnamFlag from "../../assets/images/vietnamflag.png";
-import englandFlag from "../../assets/images/englandflag.png";
-
-const languages = [
-  {
-    code: "en",
-    name: "english",
-    flag: englandFlag,
-  },
-  {
-    code: "vi",
-    name: "vietnamese",
-    flag: vietnamFlag,
-  },
-];
 const cart = localStorage.getItem("cartItems") !== null ? JSON.parse(localStorage.getItem("cartItems")) : [];
 const order = localStorage.getItem("order") !== null ? JSON.parse(localStorage.getItem("order")) : {};
 
 const initialState = {
-  languages,
   user: undefined,
   isCollapsed: false,
   cart,

@@ -3,11 +3,11 @@ import { setUser } from "@slices/commonSlice";
 import { memo, useLayoutEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, matchPath, useLocation, useNavigate } from "react-router-dom";
-import PrivateRoutes from "./PrivateRoutes";
 import AuthRoutes from "@auth/Routes/AuthRoutes";
 import ErrorRoutes from "@common/Error/Routes/ErrorRoutes";
 import { isEmpty } from "lodash";
 import { authService } from "@services/index";
+import ClientRoutes from "@client/Routes/ClientRoutes";
 
 const CommonRoutes = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,7 +66,7 @@ const CommonRoutes = () => {
 
   return (
     <Routes>
-      <Route path="*" element={<PrivateRoutes />} />
+      <Route path="*" element={<ClientRoutes />} />
       <Route path="auth/*" element={<AuthRoutes />} />
       <Route path="error/*" element={<ErrorRoutes />} />
     </Routes>

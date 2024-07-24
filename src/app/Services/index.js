@@ -5,8 +5,6 @@ export * as categoryService from "./categoryService";
 export * as productService from "./productService";
 export * as ratingService from "./ratingService";
 export * as userService from "./userService";
-export * as roleService from "./roleService";
 export * as voucherService from "./voucherService";
 export * as uploadService from "./uploadService";
-export * as languageService from "./languageService";
 export * as paymentService from "./paymentService";

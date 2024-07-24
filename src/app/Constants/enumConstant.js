@@ -3,11 +3,6 @@ export const BooleanEnum = {
   false: "false",
 };
 
-export const UserRoleEnum = {
-  admin: "admin",
-  user: "user",
-};
-
 export const OrderStatusEnum = {
   processing: "processing",
   packed: "packed",
