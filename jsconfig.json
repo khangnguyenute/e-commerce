@@ -26,7 +26,6 @@
       "@utils/*": ["./src/common/Utils/*"],
       "@common/*": ["./src/common/*"],
       "@auth/*": ["./src/features/Auth/*"],
-      "@admin/*": ["./src/features/Admin/*"],
       "@client/*": ["./src/features/Client/*"]
     }
   },

@@ -22,17 +22,6 @@ export const PROFILE_PATH = {
   FAVORITE: "/my/favorite",
 };
 
-export const ADMIN_PATH = {
-  HOME: "/admin",
-  USER_MANAGEMENT: "/admin/user-management",
-  ORDER_MANAGEMENT: "/admin/order-management",
-  BRAND_MANAGEMENT: "/admin/brand-management",
-  CATEGORY_MANAGEMENT: "/admin/category-management",
-  PRODUCT_MANAGEMENT: "/admin/product-management",
-  VOUCHER_MANAGEMENT: "/admin/voucher-management",
-  RATING_MANAGEMENT: "/admin/rating-management",
-};
-
 export const HOME_PATH = {
   HOME: "/",
   ABOUT: "/about",

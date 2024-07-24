@@ -8,12 +8,6 @@ export const PATHS = {
     "https://raw.githubusercontent.com/nhidh99/codergamo/master/004-location-selects/locations/location.json",
 };
 
-export const LANGUAGE_API_PATH = {
-  LANGUAGES: "languages",
-  LANGUAGE: "language",
-  LANGUAGE_ID: "language/:id",
-};
-
 export const AUTH_API_PATH = {
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
@@ -27,13 +21,6 @@ export const AUTH_API_PATH = {
 
 export const COMMON_API_PATH = {
   UPLOAD_IMAGE: "v1/upload",
-};
-
-export const ADMIN_USER_PATH = {
-  USER: "api/user",
-  USERS: "api/users",
-  USER_ID_PATH: (id) => `api/user/${id}`,
-  USER_FAVORITE_PRODUCT: "api/user/favorite-product",
 };
 
 export const BRAND_PATH = {

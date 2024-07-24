@@ -41,14 +41,14 @@ const ProductCard = ({ data, isBorder = false, className }) => {
         <img src={data.image} alt=""></img>
         {data.docquyen && (
           <img
-            className="h-w-10 absolute bottom-0 left-0 w-10"
+            className="absolute bottom-0 left-0 h-10 w-10"
             src="https://cdn.tgdd.vn/ValueIcons/Label_01-05.png"
             alt=""
           ></img>
         )}
         {data.baohanh === "18T" && (
           <img
-            className="h-w-10 absolute bottom-0 left-0 w-10"
+            className="absolute bottom-0 left-0 h-10 w-10"
             src="https://cdn.tgdd.vn/ValueIcons/Label_01-02.png"
             alt=""
           ></img>
@@ -56,7 +56,7 @@ const ProductCard = ({ data, isBorder = false, className }) => {
       </div>
 
       {data.tag && (
-        <p className="mx-autơ w-[160px] rounded-3xl bg-[#db2562] p-2 text-center text-xs font-medium uppercase text-white">
+        <p className="mx-auto w-[160px] rounded-3xl bg-[#db2562] p-2 text-center text-xs font-medium uppercase text-white">
           {data.tag}
         </p>
       )}

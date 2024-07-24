@@ -5,7 +5,6 @@ import { authService } from "@services/index";
 
 import { normalizeQuery } from "../Helpers/requestHelpers";
 import errorHandler from "./errorHandler.js";
-import { getPageLanguage } from "@services/languageService";
 
 export const baseURL = "https://kpshop-backend-5yfh.onrender.com";
 
@@ -15,7 +14,6 @@ const axiosInstance = axios.create({
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    "Accept-Language": getPageLanguage(),
   },
   withCredentials: true,
 });
