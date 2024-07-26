@@ -3,7 +3,6 @@ import { BiChevronLeft } from "react-icons/bi";
 import { twMerge } from "tailwind-merge";
 import { useTimeout } from "usehooks-ts";
 
-import SidebarLink from "./Link/Link";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "@slices/commonSlice";
 
@@ -11,7 +10,6 @@ const LayoutSidebar = ({
   children,
   className,
   containerClassName,
-  sidebarLinkClassName,
   defaultOpeningGroups,
   id: sidebarId,
   isDisabledCollapse = false,
@@ -132,7 +130,6 @@ const LayoutSidebar = ({
                 onOpen: handleOpenSidebarGroup,
               }),
             )}
-          <SidebarLink className={sidebarLinkClassName} />
         </div>
         <div
           className={twMerge(
@@ -145,7 +142,7 @@ const LayoutSidebar = ({
           onClick={handleClickCollapse}
         >
           <BiChevronLeft
-            className={twMerge("text-slate-500 duration-100", isCollapsed && "rotate-180")}
+            className={twMerge("text-slate-500 duration-200", isCollapsed && "rotate-180")}
             size={18}
           />
         </div>

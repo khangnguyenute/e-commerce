@@ -7,7 +7,7 @@ const UncontrolledInputOTP = ({ quantity = 6, value, error, inlineError = false,
   };
 
   return (
-    <div className="block cursor-text bg-white ring-inset transition-colors duration-100">
+    <div className="block cursor-text bg-white ring-inset transition-colors duration-200">
       <PinInput
         length={quantity}
         initialValue={String(value)}

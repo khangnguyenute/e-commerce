@@ -7,7 +7,16 @@
 @import "swiper/css/thumbs";
 
 @tailwind base;
+body {
+  @apply font-source-sans-pro text-slate-700;
+}
+
 @tailwind components;
+.section__container {
+  @apply max-w-320 mx-auto px-4 py-8;
+  width: 100% !important;
+}
+
 @tailwind utilities;
 
 @layer utilities {
@@ -15,10 +24,6 @@
   input[type="number"]::-webkit-outer-spin-button {
     @apply appearance-none;
   }
-}
-
-body {
-  @apply font-source-sans-pro text-slate-700;
 }
 
 *:not([class]) {
@@ -135,17 +140,6 @@ body {
       @apply rounded-r-full;
     }
   }
-}
-
-.no-click-flicking {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-
-  @apply select-none;
 }
 
 .swiper-button-next,

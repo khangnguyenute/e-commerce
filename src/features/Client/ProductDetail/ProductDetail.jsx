@@ -56,7 +56,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="mx-auto my-6 flex w-320 flex-col space-y-6">
+    <div className="section__container flex flex-col space-y-6">
       <ProductDetailBreadcrumb product={product} />
       <div className="flex flex-col space-y-6">
         <div className="flex gap-8">

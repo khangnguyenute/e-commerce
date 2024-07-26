@@ -25,7 +25,7 @@ const TableFooterPageSizeSelector = ({ sizes, pageSize, onChangePageSize }) => {
     >
       <div
         className={twMerge(
-          "flex cursor-pointer items-center space-x-1 rounded-lg bg-gray-100 py-2 pl-4 pr-3 text-sm font-semibold duration-100 hover:bg-gray-200",
+          "flex cursor-pointer items-center space-x-1 rounded-lg bg-gray-100 py-2 pl-4 pr-3 text-sm font-semibold duration-200 hover:bg-gray-200",
           isShowingMenu && "bg-gray-200",
         )}
       >

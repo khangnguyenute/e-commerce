@@ -86,7 +86,7 @@ const CartReceiver = ({ isSubmitting }) => {
   }, [fetchCityData, fetchDistrictData, fetchWardData]);
 
   return (
-    <div className="grid grid-cols-1 gap-4 rounded-xl border bg-white p-6 shadow-xl">
+    <div className="grid grid-cols-1 gap-4 rounded-xl border bg-white p-6 shadow-base">
       <div className="flex items-center justify-between">
         <h3 className="font-semibold">{t("receiver")}</h3>
       </div>

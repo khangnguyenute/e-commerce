@@ -16,7 +16,7 @@ const ProfileOrderHistoryGridContent = ({ order, isDetailed }) => {
   );
 
   return (
-    <div className="flex flex-col space-y-4 rounded-xl border bg-white p-6 shadow-xl">
+    <div className="flex flex-col space-y-4 rounded-xl border bg-white p-6 shadow-base">
       <ProfileOrderHistoryGridContentHeader order={order} onClickBack={handleClickBack} />
 
       <ProfileOrderHistoryGridContentBody order={order} isDetailed={isDetailed} />

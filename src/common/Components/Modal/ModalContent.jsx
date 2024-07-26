@@ -30,7 +30,7 @@ const ModalContent = ({
             <div className="flex items-center justify-between">
               <div className="h-fit w-fit pb-2 text-lg font-semibold">{title}</div>
               <div
-                className="flex items-center justify-center rounded-full border-2 border-gray-100 bg-gray-50 p-1 duration-75 hover:cursor-pointer hover:border-gray-200 hover:bg-gray-100"
+                className="flex items-center justify-center rounded-full border-2 border-gray-100 bg-gray-50 p-1 duration-200 hover:cursor-pointer hover:border-gray-200 hover:bg-gray-100"
                 role="button"
                 tabIndex={0}
                 onClick={onClose}

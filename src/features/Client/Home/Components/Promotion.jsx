@@ -46,7 +46,7 @@ const HomePromotion = ({ title, image, category, sliders, className }) => {
           contentClassName="h-48 w-full rounded-xl object-fill"
         />
       )}
-      <Carousel gallery={deviceData} isLoading={isLoading} slidesPerView={5} contentClassName="h-100" />
+      <Carousel gallery={deviceData} isLoading={isLoading} slidesPerView={5} contentClassName="min-h-88" />
       {isLoading ? (
         <LoadingSkeleton className="h-11 w-1/2" />
       ) : (

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { ProductCard } from "../DisplayProduct";
+import { ProductCard } from "../ProductCard";
 
 /**
  * data: image || product

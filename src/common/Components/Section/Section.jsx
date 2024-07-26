@@ -8,7 +8,7 @@ const Section = ({ isLoading, title, image, className = "bg-transparent", childr
     <div className={twMerge("flex flex-col space-y-4 rounded-xl py-8", className)}>
       {isLoading && <SectionHeaderSkeleton title={title} image={image} />}
       {!isLoading && <SectionHeader title={title} image={image} />}
-      <div className="flex flex-col items-center justify-center space-y-4">{children}</div>
+      {children}
     </div>
   );
 };

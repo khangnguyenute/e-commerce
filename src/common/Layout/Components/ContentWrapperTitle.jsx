@@ -7,12 +7,12 @@ const LayoutContentWrapperTitle = ({ title, subtitle, onClickBack }) => {
     <div className="group">
       {subtitle && (
         <div
-          className="-ml-1 mt-1 flex cursor-pointer items-center space-x-1 duration-100 hover:text-primary-700 hover:underline hover:underline-offset-4"
+          className="-ml-1 mt-1 flex cursor-pointer items-center space-x-1 duration-200 hover:text-primary-700 hover:underline hover:underline-offset-4"
           role="button"
           tabIndex={0}
           onClick={onClickBack}
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-full duration-100">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full duration-200">
             <BsArrowLeft size={14} />
           </div>
           <span className="text-sm font-normal">{subtitle}</span>

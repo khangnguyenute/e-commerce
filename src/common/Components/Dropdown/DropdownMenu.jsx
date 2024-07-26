@@ -139,7 +139,7 @@ const DropdownMenu = ({
     <div
       ref={dropdownRef}
       className={twMerge(
-        "duration fixed z-50 hidden w-48 rounded-lg border-t-2 border-gray-100 bg-white p-4 text-slate-700 shadow-lg transition ease-linear",
+        "fixed z-50 hidden w-48 rounded-lg border-t-2 border-gray-100 bg-white p-4 text-slate-700 shadow-lg duration-200 ease-linear",
         isShow && "block",
         className,
       )}

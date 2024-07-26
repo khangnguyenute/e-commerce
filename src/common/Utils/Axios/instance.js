@@ -7,6 +7,7 @@ import { normalizeQuery } from "../Helpers/requestHelpers";
 import errorHandler from "./errorHandler.js";
 
 export const baseURL = "https://kpshop-backend-5yfh.onrender.com";
+// export const baseURL = "http://localhost:8000";
 
 const axiosInstance = axios.create({
   baseURL,

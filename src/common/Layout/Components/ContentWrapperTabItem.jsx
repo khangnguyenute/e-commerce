@@ -55,7 +55,7 @@ const LayoutContentWrapperTabItem = ({
   return (
     <div
       className={twMerge(
-        "bordeer-b-gray-100 relative flex-shrink-0 cursor-pointer rounded-t-lg border-2 border-transparent px-6 py-3 duration-100 hover:text-primary-700",
+        "bordeer-b-gray-100 relative flex-shrink-0 cursor-pointer rounded-t-lg border-2 border-transparent px-6 py-3 duration-200 hover:text-primary-700",
         isActive && "active border-gray-100 border-b-transparent bg-white text-primary-700",
         style === "line" && "rounded-none border-0 border-b-2 border-b-gray-100 px-3 py-2.5 first:ml-3",
         className,

@@ -1,19 +1,21 @@
-import { memo } from "react";
+import { Button } from "@common/Components";
+import { AUTH_API_PATH } from "@constants/apiConstant";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HeaderLoginButton = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const navigateLogin = useCallback(() => {
+    navigate(AUTH_API_PATH.LOGIN);
+  }, [navigate]);
 
   return (
-    <Link to="/auth/login">
-      <button
-        type="button"
-        className="my-4 justify-center rounded-full border-solid border-black bg-red-600 px-[30px] py-3 text-center text-[12px] font-semibold leading-6 text-white focus:bg-red-700 hover:cursor-pointer hover:bg-red-700 sm:text-base"
-      >
-        {t("login")}
-      </button>
-    </Link>
+    <Button onClick={navigateLogin}>
+      {t("login")}
+    </Button>
   );
 };
 

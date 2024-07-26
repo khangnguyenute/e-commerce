@@ -51,7 +51,7 @@ const Button = (
       className={twMerge(
         "rounded-sm lg:rounded-primary",
         sizeClassNames,
-        "space-x-3 font-semibold outline-none ring-2 transition-colors duration-100",
+        "space-x-3 font-semibold outline-none ring-2 transition-colors duration-200",
         "flex",
         colorClassNames,
         "items-center justify-center",

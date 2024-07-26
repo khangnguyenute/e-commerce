@@ -6,7 +6,7 @@ const CartProduct = ({ cartData, className }) => {
   return (
     <div
       className={twMerge(
-        "col-span-3 flex flex-col space-y-6 rounded-xl border bg-white p-6 shadow-xl",
+        "col-span-3 flex flex-col space-y-6 rounded-xl border bg-white p-6 shadow-base",
         className,
       )}
     >

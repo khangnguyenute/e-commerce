@@ -115,7 +115,7 @@ const TableHeaderSearch = (
       <Input
         name="tableGlobalFilter"
         className={twMerge(
-          "z-0 block h-9 flex-1 border-0 bg-transparent duration-100 hover:bg-gray-100",
+          "z-0 block h-9 flex-1 border-0 bg-transparent duration-200 hover:bg-gray-100",
           classNameInput,
         )}
         size="sm"
@@ -147,7 +147,7 @@ const TableHeaderSearch = (
             {fieldOptions.map(([key, value]) => (
               <div
                 key={key}
-                className="flex min-w-full cursor-pointer whitespace-nowrap px-5 py-1.5 duration-100 hover:bg-gray-100"
+                className="flex min-w-full cursor-pointer whitespace-nowrap px-5 py-1.5 duration-200 hover:bg-gray-100"
                 role="button"
                 tabIndex={0}
                 onMouseDown={() => handleChangeSearchField(key)}

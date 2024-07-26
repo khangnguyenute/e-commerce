@@ -11,7 +11,7 @@ const images = [
 
 const ProductBanner = () => {
   return (
-    <div className="mx-auto grid w-320 grid-cols-3 gap-6">
+    <div className="section__container grid grid-cols-3 gap-6">
       <div className="col-span-2">
         <Carousel gallery={images} slidesPerView={1} contentClassName="rounded-xl" />
       </div>
