@@ -5,7 +5,7 @@ const ProfileOrderHistoryGridSkeleton = ({ isDetailed }) => {
   return (
     <div className="grid w-full grid-cols-1 gap-6">
       {Array.from({ length: 1 }).map((_, index) => (
-        <div key={index} className="flex flex-col rounded-xl border bg-white p-6 shadow-xl">
+        <div key={index} className="flex flex-col rounded-xl border bg-white p-6 shadow-base">
           <div className="flex justify-between space-x-4">
             <LoadingSkeleton className="h-5 w-48" />
             <LoadingSkeleton className="h-5 w-14" />

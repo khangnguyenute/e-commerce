@@ -19,7 +19,7 @@ const UncontrolledInputQuantity = (
     onChange,
     ...props
   },
-  ref
+  ref,
 ) => {
   const [value, setValue] = useState(0);
 
@@ -64,7 +64,7 @@ const UncontrolledInputQuantity = (
       }
       return number;
     },
-    [max, min]
+    [max, min],
   );
 
   const handleIncrease = useCallback(() => {
@@ -108,13 +108,13 @@ const UncontrolledInputQuantity = (
       <div
         className={twMerge(
           "absolute right-0.5 top-0.5 flex group-focus-within:z-20 group-hover:z-20",
-          sizeClassName.container
+          sizeClassName.container,
         )}
       >
         <div className="my-0 border border-gray-100" />
         <div className="flex w-full flex-col justify-center divide-y-2">
           <div
-            className="flex items-center justify-center text-gray-300 duration-100 hover:text-blue-500"
+            className="flex items-center justify-center text-gray-300 duration-200 hover:text-blue-500"
             role="button"
             tabIndex={0}
             onClick={handleIncrease}
@@ -125,7 +125,7 @@ const UncontrolledInputQuantity = (
             />
           </div>
           <div
-            className="flex items-center justify-center text-gray-300 duration-100 hover:text-blue-500"
+            className="flex items-center justify-center text-gray-300 duration-200 hover:text-blue-500"
             role="button"
             tabIndex={0}
             onClick={handleDecrease}

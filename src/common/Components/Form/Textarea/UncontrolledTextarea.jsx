@@ -106,7 +106,7 @@ const UncontrolledTextarea = ({
         htmlFor={id}
         style={style}
         className={twMerge(
-          "relative inline-block h-max rounded-lg border-2 bg-white ring-inset transition-colors duration-100",
+          "relative inline-block h-max rounded-lg border-2 bg-white ring-inset transition-colors duration-200",
           sizeClassNames.block,
           disabled ? "cursor-default bg-gray-50 ring-gray-100" : "cursor-text",
           className,
@@ -120,7 +120,7 @@ const UncontrolledTextarea = ({
             textColor,
             sizeClassNames.label,
             (isFocusing || Boolean(value)) &&
-              twMerge("top-1.5 text-sm font-semibold duration-100", sizeClassNames.focusingLabel),
+              twMerge("top-1.5 text-sm font-semibold duration-200", sizeClassNames.focusingLabel),
             error && "text-red-500",
           )}
         >

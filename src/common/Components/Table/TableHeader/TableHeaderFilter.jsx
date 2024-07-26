@@ -235,7 +235,7 @@ const TableHeaderFilter = ({ id, header, className, onChangeFilters }, ref) => {
     <div className={twMerge("relative mb-4 mr-4 h-10 rounded-lg last:mr-0", className)} ref={containerRef}>
       <div
         className={twMerge(
-          "z-20 flex h-full w-full cursor-pointer items-center justify-center space-x-2 rounded-lg border-2 border-gray-100 bg-gray-50 pl-4 pr-2.5 duration-100 hover:border-gray-200 hover:bg-gray-100",
+          "z-20 flex h-full w-full cursor-pointer items-center justify-center space-x-2 rounded-lg border-2 border-gray-100 bg-gray-50 pl-4 pr-2.5 duration-200 hover:border-gray-200 hover:bg-gray-100",
           isShowDropdownMenu && "border-gray-200 bg-gray-100",
           !isEmpty(selectedFilters) && "border-blue-500 bg-blue-50 hover:border-blue-500 hover:bg-blue-50",
         )}

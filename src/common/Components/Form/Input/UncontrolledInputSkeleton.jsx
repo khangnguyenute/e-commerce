@@ -1,11 +1,5 @@
 import _ from "lodash";
-import React, {
-  forwardRef,
-  memo,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import React, { forwardRef, memo, useCallback, useEffect, useState } from "react";
 import { RiInformationLine } from "react-icons/ri";
 import { Tooltip } from "react-tooltip";
 import { twMerge } from "tailwind-merge";
@@ -36,7 +30,7 @@ const UncontrolledInputSkeleton = (
     onBlur,
     ...props
   },
-  ref
+  ref,
 ) => {
   const [isFocusing, setIsFocusing] = useState(false);
 
@@ -45,7 +39,7 @@ const UncontrolledInputSkeleton = (
       setIsFocusing(true);
       if (_.isFunction(onFocus)) onFocus(e);
     },
-    [onFocus]
+    [onFocus],
   );
 
   const handleBlur = (e) => {
@@ -78,25 +72,21 @@ const UncontrolledInputSkeleton = (
   switch (size) {
     case "xs":
       sizeClassNames.block = "h-8 px-3";
-      sizeClassNames.label =
-        "text-sm px-2 left-1 top-1/2 -translate-y-1/2 bg-transparent";
+      sizeClassNames.label = "text-sm px-2 left-1 top-1/2 -translate-y-1/2 bg-transparent";
       sizeClassNames.focusingLabel = "hidden";
       sizeClassNames.input = "text-sm translate-y-1";
       break;
     case "sm":
       sizeClassNames.block = "h-10 px-3";
-      sizeClassNames.label =
-        "px-2 left-1 text-base top-1/2 -translate-y-1/2 bg-transparent";
-      sizeClassNames.focusingLabel = isShowLabelWhenFocusing
-        ? "-translate-y-5 bg-inherit"
-        : "hidden";
+      sizeClassNames.label = "px-2 left-1 text-base top-1/2 -translate-y-1/2 bg-transparent";
+      sizeClassNames.focusingLabel = isShowLabelWhenFocusing ? "-translate-y-5 bg-inherit" : "hidden";
       sizeClassNames.input = "text-normal translate-y-[7px] text-base";
       break;
     default:
       sizeClassNames.block = "h-13 px-4";
       sizeClassNames.label = twMerge(
         "px-2 left-2 top-1/2 -translate-y-1/2",
-        !disabled ? "bg-white" : "bg-transparent"
+        !disabled ? "bg-white" : "bg-transparent",
       );
       sizeClassNames.focusingLabel = "-translate-y-4 -mt-0.5 text-sm";
       sizeClassNames.input = "text-normal top-1/2 translate-y-1/2";
@@ -114,12 +104,12 @@ const UncontrolledInputSkeleton = (
         htmlFor={id}
         style={style}
         className={twMerge(
-          "relative inline-block rounded-lg border-2 bg-white ring-inset transition-colors duration-100",
+          "relative inline-block rounded-lg border-2 bg-white ring-inset transition-colors duration-200",
           sizeClassNames.block,
           disabled ? "cursor-default bg-gray-50 ring-gray-100" : "cursor-text",
           className,
           borderColor,
-          Boolean(error) && "border-red-500 ring-red-500"
+          Boolean(error) && "border-red-500 ring-red-500",
         )}
       >
         <div
@@ -129,27 +119,25 @@ const UncontrolledInputSkeleton = (
             sizeClassNames.label,
             (isFocusing || isAvailableValue) &&
               twMerge(
-                "top-1.5 justify-between text-sm font-semibold duration-100",
-                sizeClassNames.focusingLabel
+                "top-1.5 justify-between text-sm font-semibold duration-200",
+                sizeClassNames.focusingLabel,
               ),
             Boolean(error) && "text-red-500",
             "absolute",
-            disabled && "text-gray-400"
+            disabled && "text-gray-400",
           )}
         >
           {(isFocusing || isAvailableValue) && (
             <div
               className={twMerge(
                 "absolute inset-y-0 left-0 top-1/2 -z-10 w-full -translate-y-0.5",
-                disabled && "mt-0.5 h-1 bg-gray-50"
+                disabled && "mt-0.5 h-1 bg-gray-50",
               )}
             />
           )}
           {label}
           {isRequired && (
-            <div className="absolute -right-2.5 w-3.5 bg-inherit text-lg font-normal text-red-500">
-              *
-            </div>
+            <div className="absolute -right-2.5 w-3.5 bg-inherit text-lg font-normal text-red-500">*</div>
           )}
           {tooltip && (
             <>
@@ -171,7 +159,7 @@ const UncontrolledInputSkeleton = (
         <div
           className={twMerge(
             "relative flex items-center justify-start",
-            isFocusing || isAvailableValue ? "opacity-100" : "opacity-0"
+            isFocusing || isAvailableValue ? "opacity-100" : "opacity-0",
           )}
         >
           {children}
@@ -180,7 +168,7 @@ const UncontrolledInputSkeleton = (
               sizeClassNames.input,
               "flex w-full items-center",
               labelPostfix && "pr-6",
-              classNameInput
+              classNameInput,
             )}
           >
             <input
@@ -188,7 +176,7 @@ const UncontrolledInputSkeleton = (
               type={type}
               className={twMerge(
                 "w-full flex-1 border-none bg-inherit outline-none transition-none",
-                disabled && "text-gray-400"
+                disabled && "text-gray-400",
               )}
               readOnly={readOnly}
               disabled={disabled}
@@ -203,9 +191,7 @@ const UncontrolledInputSkeleton = (
           </div>
         </div>
       </label>
-      {!inlineError && Boolean(error) && (
-        <div className="-mb-1.5 mt-1.5 text-sm text-red-500">{error}</div>
-      )}
+      {!inlineError && Boolean(error) && <div className="-mb-1.5 mt-1.5 text-sm text-red-500">{error}</div>}
     </>
   );
 };

@@ -30,7 +30,7 @@ const ProductDetailRelationship = ({ category }) => {
   }, [fetchData]);
 
   return (
-    <Section className="border border-solid border-gray-300 px-4 py-6">
+    <Section className="">
       <div className="w-full text-xl font-semibold">{t("relatedProducts")}</div>
       <Carousel gallery={productData} isLoading={isLoading} slidesPerView={5} />
     </Section>

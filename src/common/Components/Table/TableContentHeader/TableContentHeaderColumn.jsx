@@ -27,30 +27,20 @@ const TableContentHeaderColumn = ({
         id === "selector" && "sticky left-0 z-10",
         id === "actions" && "sticky right-0 z-10",
         className,
-        headerClassName
+        headerClassName,
       )}
     >
       <div
-        className={twMerge(
-          "group relative block cursor-pointer",
-          isSortable && "inline-flex"
-        )}
+        className={twMerge("group relative block cursor-pointer", isSortable && "inline-flex")}
         role="button"
         tabIndex={0}
         onClick={handleClickSortButton}
       >
-        <div
-          className={twMerge(
-            "duration-100",
-            Boolean(isSorted) && "left-0 translate-x-0"
-          )}
-        >
-          {children}
-        </div>
+        <div className={twMerge("duration-200", Boolean(isSorted) && "left-0 translate-x-0")}>{children}</div>
         {isSortable && (
           <TableContentHeaderSortIcon
             isSorted={isSorted}
-            className="ml-1 opacity-0 transition-transform duration-100 group-hover:opacity-100"
+            className="ml-1 opacity-0 transition-transform duration-200 group-hover:opacity-100"
           />
         )}
       </div>

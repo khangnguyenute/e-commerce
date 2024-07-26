@@ -43,7 +43,6 @@ module.exports = {
       height: {
         4.5: "18px",
         13: "3.25rem",
-        100: "25rem",
         150: "37.5rem",
         "fit-layout": "calc(100vh - 80px)",
       },
@@ -52,6 +51,7 @@ module.exports = {
         13: "3.25rem",
         20: "5rem",
         52: "13rem",
+        88: "22rem",
       },
       maxHeight: {
         "fit-layout": "calc(100vh - 80px)",
@@ -88,6 +88,7 @@ module.exports = {
       maxWidth: {
         20: "5rem",
         48: "12rem",
+        320: "80rem",
       },
       spacing: {
         0.25: "0.0625rem",
@@ -96,16 +97,8 @@ module.exports = {
       },
       boxShadow: {
         ...defaultTheme.boxShadow,
-        xl: "0px 5px 14px 0px rgba(100, 100, 111, 0.2)",
-        left: "0px 2px 4px 0px rgba(14, 30, 37, 0.12) , 0px 2px 16px 0px rgba(14, 30, 37, 0.32)",
-        inside: "inset 1px 1px 2px 0 rgba(100,100,111,0.1);",
+        base: "0px 2px 8px rgba(0, 0, 0, 0.1)",
       },
-    },
-    screens: {
-      xs: "320px",
-      ...defaultTheme.screens,
-      "3xl": "1600px",
-      "4xl": "1920px",
     },
   },
 

@@ -224,7 +224,7 @@ const TableHeader = ({ id, filterClassName, columnFilter, headerGroups, searchGr
         {!isEmpty(filterHeaders) && (
           <div
             className={twMerge(
-              "mb-4 hidden h-10 cursor-not-allowed items-center rounded-lg border-2 border-gray-200 px-4 opacity-50 duration-100 md:flex",
+              "mb-4 hidden h-10 cursor-not-allowed items-center rounded-lg border-2 border-gray-200 px-4 opacity-50 duration-200 md:flex",
               !isEmpty(columnFilter) && "cursor-pointer border-blue-500 bg-blue-50 opacity-100",
               isShowFilterMobile && "flex",
             )}

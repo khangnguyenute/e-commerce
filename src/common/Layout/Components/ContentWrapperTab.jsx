@@ -86,7 +86,7 @@ const LayoutContentWrapperTab = ({
       ))}
       <span
         className={twMerge(
-          "absolute bottom-px left-6 border-t-2 border-transparent duration-100 lg:border-primary-700",
+          "absolute bottom-px left-6 border-t-2 border-transparent duration-200 lg:border-primary-700",
           activeBarClassName,
         )}
         ref={activeBarRef}

@@ -1,38 +1,54 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import shape01Image from "../../../../assets/images/footer/shape_01.png";
 import { PROJECT_NAME } from "@constants/commonConstant";
 import { Logo } from "@common/Components/Logo";
+import { HOME_PATH } from "@constants/routeConstant";
+import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
+import FooterSocial from "./FooterSocial";
 import FooterLink from "./FooterLink";
-import FooterSocialIcon from "./FooterSocialIcon";
 
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative z-40 overflow-hidden border-t-2 border-gray-100 bg-white" id="footer">
-      <div className="mx-auto w-320">
-        <div className="absolute left-0 top-4 z-0 h-full w-full">
-          <div className="absolute flex h-full w-full">
-            <img src={shape01Image} alt="background" className="h-full w-full object-contain object-center" />
-          </div>
-        </div>
-        <div className="relative z-10 grid gap-x-10 py-4 sm:grid-cols-2 sm:py-6 md:grid-cols-3 md:py-10">
-          <div className="">
-            <div className="mt-1.5">
-              <Logo className="flex items-center justify-center" imageClassName="h-20" />
+    <div className="border-t-2 border-gray-100 bg-white" id="footer">
+      <div className="section__container">
+        <div className="z-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+            <Logo />
+            <p className="my-4 max-w-none lg:max-w-96">{t("siteDescription")}</p>
+            <div className="flex items-center gap-x-4">
+              <FooterSocial icon={<FiFacebook />} className="text-blue-500 hover:bg-blue-500" />
+              <FooterSocial icon={<FiInstagram />} className="text-primary-500 hover:bg-primary-500" />
+              <FooterSocial icon={<FiTwitter />} className="text-cyan-500 hover:bg-cyan-500" />
+              <FooterSocial icon={<FiLinkedin />} className="text-blue-500 hover:bg-blue-500" />
             </div>
-            <div className="mt-2">{t("siteDescription")}</div>
           </div>
-          <FooterLink className="relative z-10 mt-6 grid-cols-1 xs:hidden xs:grid-cols-2 sm:mt-0 md:col-span-2 md:grid md:grid-cols-3" />
-        </div>
-        <div className="relative z-10 mt-2 items-center justify-between border-t-2 border-gray-100 py-4 md:flex">
-          <div className="text-center md:text-left">
-            &copy; {PROJECT_NAME} 2024. {t("reserved")}
+          <div>
+            <h4 className="mb-3 font-bold">{t("company")}</h4>
+            <FooterLink to={HOME_PATH.COMPANY}>{t("company")}</FooterLink>
+            <FooterLink to={HOME_PATH.BLOGS}>{t("blogs")}</FooterLink>
+            <FooterLink to={HOME_PATH.PARTNERS}>{t("partners")}</FooterLink>
+            <FooterLink to={HOME_PATH.CONTACT}>{t("contact")}</FooterLink>
           </div>
-          <FooterSocialIcon className="mt-4 flex justify-center gap-x-3 md:mt-0 md:justify-start md:gap-x-4" />
+          <div>
+            <h4 className="mb-3 font-bold">{t("support")}</h4>
+            <FooterLink to={HOME_PATH.GETTING_STARTED}>{t("started")}</FooterLink>
+            <FooterLink to={HOME_PATH.DOCUMENTATION}>{t("documentation")}</FooterLink>
+            <FooterLink to={HOME_PATH.GUIDE}>{t("guides")}</FooterLink>
+            <FooterLink to={HOME_PATH.FAQ}>{t("faqs")}</FooterLink>
+          </div>
+          <div>
+            <h4 className="mb-3 font-bold">{t("trustLegal")}</h4>
+            <FooterLink to={HOME_PATH.TERM}>{t("termsConditions")}</FooterLink>
+            <FooterLink to={HOME_PATH.NOTICE}>{t("notice")}</FooterLink>
+            <FooterLink to={HOME_PATH.CLAIM}>{t("claim")}</FooterLink>
+          </div>
         </div>
+      </div>
+      <div className="border-t-2 border-gray-100 py-2 text-center">
+        <p>&copy; {PROJECT_NAME} 2024. All rights reserved.</p>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ const TableRowActionDropdown = ({ id, items, className }) => {
   return (
     <div className="relative" ref={toggleButtonRef}>
       <div
-        className="w-fit cursor-pointer rounded-lg bg-gray-100 p-2 duration-100 hover:bg-gray-200"
+        className="w-fit cursor-pointer rounded-lg bg-gray-100 p-2 duration-200 hover:bg-gray-200"
         role="button"
         tabIndex={0}
         onClick={handleClickToggleButton}
@@ -39,12 +39,7 @@ const TableRowActionDropdown = ({ id, items, className }) => {
         <HiMenu />
       </div>
       {isShowDropdownMenu && (
-        <TableRowActionDropdownMenu
-          parentRef={toggleButtonRef}
-          id={id}
-          items={items}
-          className={className}
-        />
+        <TableRowActionDropdownMenu parentRef={toggleButtonRef} id={id} items={items} className={className} />
       )}
     </div>
   );

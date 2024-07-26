@@ -102,7 +102,7 @@ const UncontrolledSelect = ({
       >
         <div
           className={twMerge(
-            "absolute left-2 top-1/2 z-10 flex -translate-y-1/2 items-center justify-between bg-white px-2 text-gray-500 transition-all duration-100 group-focus-within:border-blue-500",
+            "absolute left-2 top-1/2 z-10 flex -translate-y-1/2 items-center justify-between bg-white px-2 text-gray-500 transition-all duration-200 group-focus-within:border-blue-500",
             isFocusing && "-top-0.5 text-sm font-semibold text-blue-500",
             !isLoading && Boolean(value) && "-top-0.5 text-sm font-semibold text-blue-500",
             error && "text-red-500",

@@ -123,7 +123,7 @@ const UncontrolledUploadInput = ({
   return (
     <div
       className={twMerge(
-        "relative block cursor-text bg-white transition-colors duration-100",
+        "relative block cursor-text bg-white transition-colors duration-200",
         label && "rounded-lg border-2 border-gray-100 px-4 py-4 ring-inset hover:border-blue-500",
         label && error && "cursor-default bg-gray-50 ring-gray-100 hover:border-gray-100",
       )}
@@ -131,7 +131,7 @@ const UncontrolledUploadInput = ({
       {label && (
         <div
           className={twMerge(
-            "absolute left-2 top-1.5 z-10 -mt-0.5 flex -translate-y-4 items-center justify-between bg-white px-2 text-sm font-semibold text-blue-500 transition-all duration-100",
+            "absolute left-2 top-1.5 z-10 -mt-0.5 flex -translate-y-4 items-center justify-between bg-white px-2 text-sm font-semibold text-blue-500 transition-all duration-200",
             disabled && "text-gray-400",
           )}
         >

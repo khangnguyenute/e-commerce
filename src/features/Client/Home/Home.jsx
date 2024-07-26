@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import useDocumentTitle from "@hooks/useDocumentTitle";
 
 import HomePromotion from "./Components/Promotion";
-import HomeScrollToTop from "./Components/ScrollToTop";
 import HomeCarouselBanner from "./Components/CarouselBanner";
 
 const sliders = [
@@ -22,8 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      <HomeScrollToTop />
-      <div className="mx-auto flex w-320 flex-col space-y-6 py-6">
+      <div className="section__container flex flex-col space-y-6 py-6">
         <HomeCarouselBanner />
         <HomePromotion
           sliders={sliders}

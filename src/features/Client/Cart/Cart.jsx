@@ -112,7 +112,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="mx-auto my-4 w-320">
+    <div className="section__container">
       <CartHeader />
 
       <div className="mt-2 grid grid-cols-3 gap-6">

@@ -67,7 +67,7 @@ const ProductContainer = ({ category }) => {
   }, [isLoading, productData]);
 
   return (
-    <ContentWrapper className="mx-auto w-320" bodyClassName="m-0">
+    <ContentWrapper className="section__container" bodyClassName="m-0">
       <ProductContainerTable
         data={productData}
         category={category}

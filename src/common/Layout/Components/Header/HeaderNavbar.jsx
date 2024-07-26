@@ -8,19 +8,19 @@ const HeaderNavbar = () => {
 
   return (
     <div className="ml-8 hidden items-center space-x-6 lg:flex">
-      <Link className="cursor-pointer duration-75 hover:text-primary-700" to={HOME_PATH.COMPANY}>
+      <Link className="cursor-pointer duration-200 hover:text-primary-700" to={HOME_PATH.COMPANY}>
         {t("company")}
       </Link>
-      <Link className="cursor-pointer duration-75 hover:text-primary-700" to={HOME_PATH.FEATURES}>
+      <Link className="cursor-pointer duration-200 hover:text-primary-700" to={HOME_PATH.FEATURES}>
         {t("features")}
       </Link>
-      <Link className="cursor-pointer duration-75 hover:text-primary-700" to={HOME_PATH.PARTNERS}>
+      <Link className="cursor-pointer duration-200 hover:text-primary-700" to={HOME_PATH.PARTNERS}>
         {t("partners")}
       </Link>
-      <Link className="cursor-pointer duration-75 hover:text-primary-700" to={HOME_PATH.BLOGS}>
+      <Link className="cursor-pointer duration-200 hover:text-primary-700" to={HOME_PATH.BLOGS}>
         {t("blogs")}
       </Link>
-      <Link className="cursor-pointer duration-75 hover:text-primary-700" to={HOME_PATH.CONTACT}>
+      <Link className="cursor-pointer duration-200 hover:text-primary-700" to={HOME_PATH.CONTACT}>
         {t("contact")}
       </Link>
     </div>

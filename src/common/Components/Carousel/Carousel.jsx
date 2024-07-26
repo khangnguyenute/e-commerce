@@ -43,7 +43,7 @@ const Carousel = ({
         modules={[FreeMode, Navigation, Thumbs]}
       >
         {gallery.map((data, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="px-1 py-2">
             <CarouselItem data={data} className={contentClassName} />
           </SwiperSlide>
         ))}

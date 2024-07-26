@@ -1,60 +1,28 @@
 import { Logo } from "@common/Components/Logo";
 import { isEmpty } from "lodash";
-import { memo, useCallback, useRef } from "react";
+import { memo } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import HeaderLoginButton from "./HeaderLoginButton";
 import HeaderUserDropdown from "./HeaderUserDropdown";
-import HeaderMenu from "./HeaderMenu";
 import HeaderCart from "./HeaderCart";
-import { CLIENT_PATH } from "@constants/routeConstant";
+import HeaderMenu from "./HeaderMenu";
 
 const Header = () => {
-  const headerRef = useRef(null);
-  const navigate = useNavigate();
-
   const user = useSelector((state) => state.common.user);
 
-  const handleClickLogo = useCallback(() => {
-    navigate(CLIENT_PATH.HOME);
-  }, [navigate]);
-
-  const handleClickCart = useCallback(() => {
-    navigate(CLIENT_PATH.CART);
-  }, [navigate]);
-
   return (
-    <div className="sticky top-0 z-50 h-20 w-full bg-white shadow-md" ref={headerRef}>
-      <div className="mx-auto flex h-full w-320 justify-between">
-        <div className="flex items-center justify-start">
-          <div
-            role="button"
-            tabIndex={0}
-            className="flex h-full flex-shrink-0 items-center"
-            onClick={handleClickLogo}
-          >
-            <Logo imageClassName="h-full" className="h-14" />
-          </div>
-        </div>
-
+    <div className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="section__container grid grid-cols-3 items-center gap-4 bg-white p-4 md:w-fit md:grid-cols-6 md:bg-transparent">
+        <Logo />
         <HeaderMenu />
-
-        <div className="flex h-full w-fit items-center">
-          {isEmpty(user) ? (
-            <HeaderLoginButton />
-          ) : (
+        <div className="flex items-center justify-center space-x-2 lg:space-x-4">
+          {isEmpty(user) && <HeaderLoginButton />}
+          {!isEmpty(user) && (
             <div className="flex items-center gap-8">
               <HeaderUserDropdown />
             </div>
           )}
-          <div
-            role="button"
-            tabIndex={0}
-            className="flex text-sm text-blue-500 hover:text-blue-700"
-            onClick={handleClickCart}
-          >
-            <HeaderCart />
-          </div>
+          <HeaderCart />
         </div>
       </div>
     </div>

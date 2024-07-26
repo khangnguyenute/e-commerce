@@ -127,7 +127,7 @@ const DatePickerDropdown = ({
       tabIndex={0}
       ref={dropdownRef}
       className={twMerge(
-        "absolute top-12 z-40 flex flex-col overflow-hidden rounded-lg bg-white text-slate-700 shadow-left",
+        "absolute top-12 z-40 flex flex-col overflow-hidden rounded-lg bg-white text-slate-700 shadow-base",
         className,
       )}
       onMouseDown={handleMouseDown}
