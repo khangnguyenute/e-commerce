@@ -13,8 +13,7 @@ body {
 
 @tailwind components;
 .section__container {
-  @apply max-w-320 mx-auto px-4 py-8;
-  width: 100% !important;
+  @apply mx-auto w-full max-w-320 px-4 py-8;
 }
 
 @tailwind utilities;

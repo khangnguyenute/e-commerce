@@ -7,6 +7,24 @@ import { isEmpty, lowerCase } from "lodash";
 import { useNavigate } from "react-router-dom";
 import { CLIENT_PATH } from "@constants/routeConstant";
 
+// const breakpoints = {
+//   0: {
+//     slidesPerView: 1,
+//   },
+//   360: {
+//     slidesPerView: 2,
+//   },
+//   576: {
+//     slidesPerView: 3,
+//   },
+//   768: {
+//     slidesPerView: 4,
+//   },
+//   992: {
+//     slidesPerView: 5,
+//   },
+// };
+
 const HomePromotion = ({ title, image, category, sliders, className }) => {
   const { t } = useTranslation();
   const toast = useToast();
@@ -46,11 +64,17 @@ const HomePromotion = ({ title, image, category, sliders, className }) => {
           contentClassName="h-48 w-full rounded-xl object-fill"
         />
       )}
-      <Carousel gallery={deviceData} isLoading={isLoading} slidesPerView={5} contentClassName="min-h-88" />
+      <Carousel
+        gallery={deviceData}
+        isLoading={isLoading}
+        slidesPerView={5}
+        contentClassName="min-h-88"
+        // breakpoints={breakpoints}
+      />
       {isLoading ? (
-        <LoadingSkeleton className="h-11 w-1/2" />
+        <LoadingSkeleton className="mx-auto h-11 w-1/2 rounded-sm lg:rounded-full" />
       ) : (
-        <Button color="light" onClick={handleClickMoreProduct} className="w-1/2">
+        <Button color="light" onClick={handleClickMoreProduct} className="mx-auto w-1/2">
           {t("viewMore")}
         </Button>
       )}
