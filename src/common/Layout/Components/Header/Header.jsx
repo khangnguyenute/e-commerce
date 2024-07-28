@@ -12,10 +12,10 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="section__container grid grid-cols-3 items-center gap-4 bg-white p-4 md:w-fit md:grid-cols-6 md:bg-transparent">
+      <div className="section__container grid grid-cols-3 items-center gap-4 bg-white p-4 md:grid-cols-6 md:bg-transparent">
         <Logo />
         <HeaderMenu />
-        <div className="flex items-center justify-center space-x-2 lg:space-x-4">
+        <div className="flex items-center justify-end space-x-2 lg:space-x-4">
           {isEmpty(user) && <HeaderLoginButton />}
           {!isEmpty(user) && (
             <div className="flex items-center gap-8">

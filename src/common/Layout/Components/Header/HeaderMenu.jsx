@@ -12,7 +12,7 @@ const HeaderMenu = () => {
 
   const [isOpened, setIsOpened] = useState(false);
 
-  const menuConstant = useMemo(
+  const menu = useMemo(
     () => [
       {
         title: t("phone"),
@@ -62,20 +62,20 @@ const HeaderMenu = () => {
         onClick={hanldeOpenMenu}
         className="mx-auto w-fit rounded-md border-2 border-gray-400 p-1.5 hover:bg-gray-100 md:hidden"
       >
-        {isOpened && <MdOutlineClose size={24} />}
-        {!isOpened && <MdOutlineMenu size={24} />}
+        {isOpened && <MdOutlineClose size={20} />}
+        {!isOpened && <MdOutlineMenu size={20} />}
       </div>
       <div
         role="button"
         tabIndex={0}
         onClick={hanldeOpenMenu}
         className={twMerge(
-          "absolute left-0 top-22 -z-10 flex w-full -translate-y-full flex-col items-center space-y-8 bg-gray-100 py-8 duration-200 md:static md:z-0 md:translate-y-0 md:flex-row md:space-x-4 md:space-y-0 md:bg-transparent md:py-0",
+          "absolute left-0 top-22 -z-10 flex w-full -translate-y-full flex-col items-center bg-gray-100 py-6 duration-200 md:static md:z-0 md:translate-y-0 md:flex-row md:bg-transparent md:py-0",
           isOpened && "translate-y-0",
         )}
       >
-        <div className="mx-auto flex flex-col items-center justify-between space-x-0 space-y-8 md:flex-row md:space-x-4 md:space-y-0 lg:space-x-8">
-          {menuConstant.map((item, index) => {
+        <div className="mx-auto flex flex-col items-center justify-between space-x-0 space-y-6 md:flex-row md:space-x-3 md:space-y-0 lg:space-x-8">
+          {menu.map((item, index) => {
             return <HeaderMenuItem key={index} title={item.title} link={item.link} icon={item.icon} />;
           })}
         </div>

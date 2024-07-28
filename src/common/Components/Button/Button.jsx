@@ -49,7 +49,7 @@ const Button = (
     <button
       type="button"
       className={twMerge(
-        "rounded-sm lg:rounded-primary",
+        "rounded-sm lg:rounded-full",
         sizeClassNames,
         "space-x-3 font-semibold outline-none ring-2 transition-colors duration-200",
         "flex",

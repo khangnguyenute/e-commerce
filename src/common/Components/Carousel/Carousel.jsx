@@ -11,6 +11,8 @@ const Carousel = ({
   isThumbs = false,
   isLoading,
   slidesPerView,
+  slidesPerGroup = 1,
+  breakpoints = null,
   className,
   thumbsClassName,
   contentClassName,
@@ -34,16 +36,18 @@ const Carousel = ({
     <div className={twMerge("w-full", className)}>
       <Swiper
         loop={isLoop}
-        {...(slidesPerView && { slidesPerView })}
         spaceBetween={12}
+        {...(slidesPerView && { slidesPerView })}
+        slidesPerGroup={slidesPerGroup}
         navigation={true}
         {...(isThumbs && {
           thumbs: { swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null },
         })}
         modules={[FreeMode, Navigation, Thumbs]}
+        breakpoints={breakpoints}
       >
         {gallery.map((data, index) => (
-          <SwiperSlide key={index} className="px-1 py-2">
+          <SwiperSlide key={index}>
             <CarouselItem data={data} className={contentClassName} />
           </SwiperSlide>
         ))}

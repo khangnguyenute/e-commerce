@@ -12,7 +12,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="border-t-2 border-gray-100 bg-white" id="footer">
+    <div className="border-t-2 border-gray-100 bg-opacity-10 bg-footer" id="footer">
       <div className="section__container">
         <div className="z-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">

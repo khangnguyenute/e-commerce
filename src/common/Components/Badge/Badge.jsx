@@ -26,8 +26,8 @@ const Badge = ({ status, children, className }) => {
     <div
       className={twMerge(
         statusClassName,
-        "inline-block rounded-primary px-4 py-1 text-xs font-semibold",
-        className
+        "inline-block rounded-full px-4 py-1 text-xs font-semibold",
+        className,
       )}
     >
       {children}

@@ -1,9 +1,8 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import useDocumentTitle from "@hooks/useDocumentTitle";
-
-import HomePromotion from "./Components/Promotion";
-import HomeCarouselBanner from "./Components/CarouselBanner";
+import HomePromotion from "./HomePromotion";
+import HomeBanner from "./HomeBanner";
 
 const sliders = [
   "https://cdn.tgdd.vn/2022/07/banner/380-x-200-380x200.png",
@@ -20,29 +19,19 @@ const Home = () => {
   useDocumentTitle(t("home"));
 
   return (
-    <div>
-      <div className="section__container flex flex-col space-y-6 py-6">
-        <HomeCarouselBanner />
+    <>
+      <HomeBanner />
+      <div className="section__container flex flex-col space-y-4 py-4 md:space-y-6 md:py-6">
         <HomePromotion
           sliders={sliders}
           category="Phone"
           title="Đại tiệc Samsung"
-          className="bg-green-800 px-4"
+          className="bg-phone px-4"
         />
-        <HomePromotion
-          category="Tablet"
-          image="https://cdn.tgdd.vn/2022/11/banner/Tagline-hotsale-1200x120-1.png"
-          title="Mừng xuân 2024"
-          className="bg-primary-600 px-4"
-        />
-        <HomePromotion
-          category="Laptop"
-          image="https://media.istockphoto.com/vectors/back-to-school-sale-horizontal-banner-first-day-of-school-vector-vector-id1158813066?k=6&m=1158813066&s=170667a&w=0&h=Iki3WgYaS0lNqp4jzLrssUNPyXx5T30tt3q6BAeD1k8="
-          title="Siêu sale ngày tựu trường"
-          className="bg-yellow-600 px-4"
-        />
+        <HomePromotion category="Tablet" title="Mừng xuân 2024" className="bg-tablet px-4" />
+        <HomePromotion category="Laptop" title="Siêu sale ngày tựu trường" className="bg-laptop px-4" />
       </div>
-    </div>
+    </>
   );
 };
 export default memo(Home);
