@@ -7,25 +7,28 @@ import { isEmpty, lowerCase } from "lodash";
 import { useNavigate } from "react-router-dom";
 import { CLIENT_PATH } from "@constants/routeConstant";
 
-// const breakpoints = {
-//   0: {
-//     slidesPerView: 1,
-//   },
-//   360: {
-//     slidesPerView: 2,
-//   },
-//   576: {
-//     slidesPerView: 3,
-//   },
-//   768: {
-//     slidesPerView: 4,
-//   },
-//   992: {
-//     slidesPerView: 5,
-//   },
-// };
+const breakpoints = {
+  0: {
+    slidesPerView: 1,
+  },
+  360: {
+    slidesPerView: 2,
+  },
+  500: {
+    slidesPerView: 3,
+  },
+  768: {
+    slidesPerView: 4,
+  },
+  1024: {
+    slidesPerView: 5,
+  },
+  1280: {
+    slidesPerView: 6,
+  },
+};
 
-const HomePromotion = ({ title, image, category, sliders, className }) => {
+const HomePromotion = ({ title, category, sliders, className }) => {
   const { t } = useTranslation();
   const toast = useToast();
   const navigate = useNavigate();
@@ -55,21 +58,24 @@ const HomePromotion = ({ title, image, category, sliders, className }) => {
   }, [getData]);
 
   return (
-    <Section isLoading={isLoading} title={title} image={image} className={className}>
+    <Section isLoading={isLoading} title={title} className={className}>
       {sliders && !isEmpty(sliders) && (
         <Carousel
           gallery={sliders}
           isLoading={isLoading}
-          slidesPerView={3}
-          contentClassName="h-48 w-full rounded-xl object-fill"
+          contentClassName="h-fit w-full rounded-md object-fill"
+          breakpoints={{
+            0: { slidesPerView: 2 },
+            500: { slidesPerView: 3 },
+          }}
         />
       )}
       <Carousel
         gallery={deviceData}
         isLoading={isLoading}
         slidesPerView={5}
-        contentClassName="min-h-88"
-        // breakpoints={breakpoints}
+        contentClassName="h-36 xs:h-64 sm:h-80"
+        breakpoints={breakpoints}
       />
       {isLoading ? (
         <LoadingSkeleton className="mx-auto h-11 w-1/2 rounded-sm lg:rounded-full" />

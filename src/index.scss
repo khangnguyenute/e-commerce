@@ -8,7 +8,7 @@
 
 @tailwind base;
 body {
-  @apply font-source-sans-pro text-slate-700;
+  @apply font-sans text-slate-700;
 }
 
 @tailwind components;
@@ -141,36 +141,16 @@ body {
   }
 }
 
+.swiper-container {
+  @apply w-full;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #f3f4f6;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-rendering: auto;
+  @apply h-10 w-10 rounded-full border border-gray-200 bg-white text-blue-500 opacity-60 shadow-base duration-300 hover:opacity-100;
 
   &::after {
-    font-size: 16px;
-    color: #1a94ff;
-    font-weight: 700;
-  }
-}
-
-.swiper-button-next {
-  right: 0px;
-
-  &::after {
-    margin-left: 2px;
-  }
-}
-
-.swiper-button-prev {
-  left: 0px;
-
-  &::after {
-    margin-left: -2px;
+    @apply text-base font-bold;
   }
 }
 

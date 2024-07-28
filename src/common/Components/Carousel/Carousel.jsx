@@ -36,6 +36,7 @@ const Carousel = ({
     <div className={twMerge("w-full", className)}>
       <Swiper
         loop={isLoop}
+        spaceBetween={12}
         {...(slidesPerView && { slidesPerView })}
         slidesPerGroup={slidesPerGroup}
         navigation={true}
@@ -46,7 +47,7 @@ const Carousel = ({
         breakpoints={breakpoints}
       >
         {gallery.map((data, index) => (
-          <SwiperSlide key={index} className="px-1 py-2">
+          <SwiperSlide key={index}>
             <CarouselItem data={data} className={contentClassName} />
           </SwiperSlide>
         ))}
