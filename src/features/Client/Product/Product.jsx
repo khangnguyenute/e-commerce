@@ -10,7 +10,7 @@ const Product = ({ category }) => {
   useDocumentTitle(t(category));
 
   return (
-    <div className="my-6 flex flex-col space-y-6">
+    <div className="">
       <ProductBanner />
       <ProductContainer category={category} />
     </div>

@@ -23,13 +23,13 @@ const ProductCard = ({ data, className }) => {
       role="button"
       tabIndex={0}
       className={twMerge(
-        "group relative grid grid-cols-2 items-center overflow-hidden rounded-xl border-t-8 border-gray-100 bg-white p-2 text-sm shadow-base duration-300 hover:border-t-primary-500 xs:block sm:p-4 sm:text-base md:text-base",
+        "group relative grid grid-cols-2 items-center overflow-hidden rounded-xl border-t-8 border-gray-100 bg-white p-2 text-sm shadow-base duration-300 hover:border-t-primary-500 xs:text-base sm:p-4",
         className,
       )}
       onClick={handleClick}
     >
       {data.tag && (
-        <p className="absolute -right-12 top-5 z-10 w-fit rotate-45 scale-90 bg-primary-500 px-12 py-1 text-center text-xs uppercase text-white duration-200 group-hover:scale-100 sm:scale-90 sm:text-sm">
+        <p className="absolute -right-12 top-5 z-10 w-fit rotate-45 scale-90 bg-primary-500 px-12 py-1 text-center text-xs uppercase text-white duration-200 group-hover:scale-100 xs:text-sm sm:scale-90">
           SIÊU SALE
         </p>
       )}
@@ -38,18 +38,18 @@ const ProductCard = ({ data, className }) => {
         {data.promotion && (
           <div
             className={twMerge(
-              "scale-80 absolute left-0 top-2 z-10 w-fit rounded-md bg-tag px-1 py-0.5 text-white sm:px-2 sm:py-1 md:scale-100",
+              "scale-80 absolute left-0 top-2 z-10 w-fit rounded-md bg-tag px-1 py-0 text-white sm:px-2 sm:py-1 md:scale-100",
               data.promotion === "" && "invisible",
             )}
           >
-            <p className="text-xxs sm:text-xs">{data.promotion}</p>
+            <p className="text-xxs xs:text-xs">{data.promotion}</p>
           </div>
         )}
       </div>
       <div>
         <p className="mb-2 line-clamp-2 font-semibold duration-300 group-hover:text-blue-700">{data.name}</p>
-        <p className="text-xs sm:text-sm">
-          <BiSolidDiscount className="mr-1 inline" /> Online giá quá rẻ
+        <p className="text-xs xs:text-sm">
+          <BiSolidDiscount className="mr-1 inline" /> Giá luôn rẻ
         </p>
         <p className="mb-1 font-medium text-slate-700">
           <span className="mr-2 font-bold text-primary-500">

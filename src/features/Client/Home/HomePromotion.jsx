@@ -14,7 +14,7 @@ const breakpoints = {
   360: {
     slidesPerView: 2,
   },
-  500: {
+  576: {
     slidesPerView: 3,
   },
   768: {
@@ -74,7 +74,7 @@ const HomePromotion = ({ title, category, sliders, className }) => {
         gallery={deviceData}
         isLoading={isLoading}
         slidesPerView={5}
-        contentClassName="h-36 xs:h-64 sm:h-80"
+        contentClassName="h-36 xs:h-72 sm:h-80 xs:block"
         breakpoints={breakpoints}
       />
       {isLoading ? (

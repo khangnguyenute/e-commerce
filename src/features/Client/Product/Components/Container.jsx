@@ -67,7 +67,7 @@ const ProductContainer = ({ category }) => {
   }, [isLoading, productData]);
 
   return (
-    <ContentWrapper className="section__container" bodyClassName="m-0">
+    <ContentWrapper bodyClassName="m-0">
       <ProductContainerTable
         data={productData}
         category={category}
@@ -75,8 +75,8 @@ const ProductContainer = ({ category }) => {
         totalRows={totalRows}
         onChangeState={setQueryParams}
       >
-        <div className="mb-6 flex items-center space-x-4">
-          <div className="font-bold text-slate-700">{t("sort")}: </div>
+        <div className="font-bold text-slate-700">{t("sort")}: </div>
+        <div className="my-4 flex flex-wrap items-center gap-2">
           {uniq(Object.values(SortEnum)).map((item) => (
             <ProductContainerSortBox
               sortParams={sortParams}

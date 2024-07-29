@@ -39,7 +39,7 @@ const LayoutContentWrapper = ({
   useDocumentTitle(title, isShowHeader);
 
   return (
-    <div className={twMerge("mb-4 w-full lg:mb-0", className)}>
+    <div className={twMerge("section__container", className)}>
       {(title || actions) && isShowHeader && (
         <LayoutContentWrapperHeader className={headerClassName} title={title} actions={actions} />
       )}
