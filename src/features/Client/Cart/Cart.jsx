@@ -114,12 +114,11 @@ const Cart = () => {
   return (
     <div className="section__container">
       <CartHeader />
-
-      <div className="mt-2 grid grid-cols-3 gap-6">
-        <CartProduct cartData={cartData} className="col-span-2" />
-        <div className="col-span-1">
+      <div className="mt-2 grid grid-cols-1 gap-y-6 lg:grid-cols-3 lg:gap-x-6">
+        <CartProduct cartData={cartData} className="lg:col-span-2" />
+        <div className="lg:col-span-1">
           <FormProvider control={control} reset={reset} watch={watch} setValue={setValue} {...methods}>
-            <form onSubmit={useFormSubmit} className="grid grid-cols-1 gap-6">
+            <form onSubmit={useFormSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
               <CartReceiver isSubmitting={isSubmitting} />
               <CartOrder
                 isSubmitting={isSubmitting}

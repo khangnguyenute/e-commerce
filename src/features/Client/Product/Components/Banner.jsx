@@ -11,21 +11,20 @@ const images = [
 
 const ProductBanner = () => {
   return (
-    <div className="section__container grid grid-cols-3 gap-6">
+    <div className="section__container grid grid-cols-2 gap-4 pb-0 sm:grid-cols-3">
       <div className="col-span-2">
-        <Carousel gallery={images} slidesPerView={1} contentClassName="rounded-xl" />
+        <Carousel gallery={images} slidesPerView={1} contentClassName="rounded-md" />
       </div>
-
-      <div className="col-span-1 flex flex-col justify-between">
+      <div className="col-span-2 grid grid-cols-2 gap-4 sm:col-span-1 sm:grid-cols-1">
         <img
           src="//cdn.tgdd.vn/2022/05/banner/sticky-intel-390-97-390x97.png"
           alt=""
-          className="w-full rounded-xl"
+          className="w-full rounded-md"
         />
         <img
           src="//cdn.tgdd.vn/2022/06/banner/Xa-hang-Laptop-2-390x97-1.png"
           alt=""
-          className="w-full rounded-xl"
+          className="w-full rounded-md"
         />
       </div>
     </div>
