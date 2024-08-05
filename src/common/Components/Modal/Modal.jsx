@@ -80,7 +80,7 @@ const Modal = (
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="flex min-h-screen w-full min-w-84 overflow-y-auto py-6 scrollbar-none"
+              className="mx-auto flex min-h-screen overflow-y-auto py-6 scrollbar-none"
             >
               <div className={twMerge("relative z-20 flex w-full md:m-auto md:rounded-xl", className)}>
                 <div

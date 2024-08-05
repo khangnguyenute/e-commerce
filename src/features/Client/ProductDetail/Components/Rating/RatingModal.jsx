@@ -70,7 +70,7 @@ const ProductDetailRatingModal = ({ isOpen, product, user, onClose, onGetRatings
     >
       <div className="flex items-center justify-center text-xl font-bold">
         <div className="w-20">
-          <img src={product.image} alt="" />
+          <img src={product.image} alt={product.name} />
         </div>
         <p>{product.name}</p>
       </div>
@@ -81,6 +81,7 @@ const ProductDetailRatingModal = ({ isOpen, product, user, onClose, onGetRatings
         disabled={isSubmitting}
         placeholder={t("shareThoughtProduct")}
         name="content"
+        rows={4}
       />
     </Modal>
   );

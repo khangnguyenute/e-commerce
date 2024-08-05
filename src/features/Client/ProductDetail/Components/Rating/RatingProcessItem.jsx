@@ -19,7 +19,7 @@ const ProductDetailRatingProcessItem = ({ star, ratingData, totalVote }) => {
       <div className="h-1.5 w-full grow overflow-hidden rounded-lg bg-gray-200">
         <div className="h-full bg-yellow-600" style={{ width: `${starPrecent}%` }} />
       </div>
-      <div className=" w-14 flex-none text-blue-500">{starPrecent.toFixed(2)}%</div>
+      <div className="w-14 flex-none text-right text-blue-500">{starPrecent.toFixed(2)}%</div>
     </div>
   );
 };

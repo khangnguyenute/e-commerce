@@ -7,30 +7,25 @@ const ProductDetailDescription = ({ description }) => {
   const { t } = useTranslation();
 
   return (
-    <>
-      <div className="grid grid-cols-2">
-        <ProductDetailDescriptionItem
-          icon={<TbBrandDaysCounter size={20} />}
-          content={t("expressDelivery")}
-          detail={t("seeDetails")}
-        />
-        <ProductDetailDescriptionItem
-          icon={<TbShieldCheckFilled size={20} />}
-          content={t("warrantyCenters")}
-          detail={t("seeWarrantyAddress")}
-        />
-        <ProductDetailDescriptionItem
-          icon={<TbTruckDelivery size={20} />}
-          content={t("expressDelivery")}
-          detail={t("learnAbout")}
-        />
-      </div>
-
-      <div className="flex flex-col space-y-2">
-        <div className="text-xl font-bold">{t("description")}</div>
-        <div className="text-slate-700">{description}</div>
-      </div>
-    </>
+    <div className="mt-6">
+      <div className="text-xl font-bold">{t("description")}</div>
+      <div className="my-2 text-slate-700">{description}</div>
+      <ProductDetailDescriptionItem
+        icon={<TbBrandDaysCounter size={20} />}
+        content={t("expressDelivery")}
+        detail={t("seeDetails")}
+      />
+      <ProductDetailDescriptionItem
+        icon={<TbShieldCheckFilled size={20} />}
+        content={t("warrantyCenters")}
+        detail={t("seeWarrantyAddress")}
+      />
+      <ProductDetailDescriptionItem
+        icon={<TbTruckDelivery size={20} />}
+        content={t("expressDelivery")}
+        detail={t("learnAbout")}
+      />
+    </div>
   );
 };
 

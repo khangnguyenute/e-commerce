@@ -24,7 +24,7 @@ const ModalContent = ({
 
   return (
     <>
-      <div className="h-full max-w-md sm:max-w-none">
+      <div className="h-full w-full">
         {isShowHeader && (
           <div className={twMerge("rounded-t-lg px-6 pt-4 sm:px-10 sm:pt-7", headerClassName)}>
             <div className="flex items-center justify-between">

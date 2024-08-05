@@ -11,7 +11,7 @@ import { Button } from "@common/Components";
 import ProductDetailRatingTable from "./RatingTable";
 import { useSelector } from "react-redux";
 
-const ProductDetailRating = ({ product }) => {
+const ProductDetailRating = ({ product, className }) => {
   const { t } = useTranslation();
   const toast = useToast();
 
@@ -56,7 +56,7 @@ const ProductDetailRating = ({ product }) => {
   }, [setIsOpenModal]);
 
   return (
-    <div>
+    <div className={className}>
       <p className="mb-2 text-xl font-bold">{t("review")}</p>
       <div className="w-full rounded-lg border px-4 py-4">
         <ProductDetailRatingProcess isLoading={isLoading} ratingData={ratingData} totalVote={totalRows} />
@@ -69,8 +69,7 @@ const ProductDetailRating = ({ product }) => {
         >
           <ProductDetailRatingReview data={ratingData} isLoading={isLoading} onGetRatings={fetchRatingData} />
         </ProductDetailRatingTable>
-
-        <Button className="mx-auto mt-4 w-1/2" onClick={handleOpenModal}>
+        <Button size="sm" className="mx-auto mt-4 w-1/2 text-sm" onClick={handleOpenModal}>
           <AiFillStar size={20} />
           <span>{t("addReview")}</span>
         </Button>

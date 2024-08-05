@@ -23,7 +23,7 @@ const OrderInformation = ({ order }) => {
 
   return (
     <div className="grid grid-cols-1 gap-4 rounded-lg border bg-blue-50 p-4 shadow-md">
-      <div className="flex items-center justify-between space-x-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="font-semibold">
           {t("orderId")}: <span className="text-blue-500">#{order._id}</span>
         </div>
