@@ -23,7 +23,7 @@ const ProductCard = ({ data, className }) => {
       role="button"
       tabIndex={0}
       className={twMerge(
-        "group relative grid grid-cols-2 items-center overflow-hidden rounded-xl border-t-8 border-gray-100 bg-white p-2 text-sm shadow-base duration-300 hover:border-t-primary-500 xs:text-base sm:p-4",
+        "group relative grid grid-cols-2 items-center overflow-hidden rounded-xl border-2 border-t-8 border-gray-100 bg-white p-2 text-sm shadow-base duration-300 hover:border-t-primary-500 xs:text-base sm:p-4",
         className,
       )}
       onClick={handleClick}

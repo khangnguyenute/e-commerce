@@ -4,6 +4,27 @@ import { getProducts } from "@services/productService";
 import { memo, useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+const breakpoints = {
+  0: {
+    slidesPerView: 1,
+  },
+  360: {
+    slidesPerView: 2,
+  },
+  576: {
+    slidesPerView: 3,
+  },
+  768: {
+    slidesPerView: 4,
+  },
+  1024: {
+    slidesPerView: 5,
+  },
+  1280: {
+    slidesPerView: 6,
+  },
+};
+
 const ProductDetailRelationship = ({ category }) => {
   const { t } = useTranslation();
   const toast = useToast();
@@ -31,8 +52,14 @@ const ProductDetailRelationship = ({ category }) => {
 
   return (
     <Section>
-      <div className="w-full text-xl font-semibold">{t("relatedProducts")}</div>
-      <Carousel gallery={productData} isLoading={isLoading} slidesPerView={5} />
+      <h2 className="text-xl font-semibold">{t("relatedProducts")}</h2>
+      <Carousel
+        gallery={productData}
+        isLoading={isLoading}
+        slidesPerView={5}
+        contentClassName="h-36 xs:h-72 sm:h-80 xs:block"
+        breakpoints={breakpoints}
+      />
     </Section>
   );
 };

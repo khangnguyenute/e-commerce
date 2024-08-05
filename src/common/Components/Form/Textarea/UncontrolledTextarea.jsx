@@ -106,7 +106,7 @@ const UncontrolledTextarea = ({
         htmlFor={id}
         style={style}
         className={twMerge(
-          "relative inline-block h-max rounded-lg border-2 bg-white ring-inset transition-colors duration-200",
+          "relative inline-block rounded-lg border-2 bg-white ring-inset transition-colors duration-200",
           sizeClassNames.block,
           disabled ? "cursor-default bg-gray-50 ring-gray-100" : "cursor-text",
           className,
@@ -162,6 +162,7 @@ const UncontrolledTextarea = ({
             ref={ref}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            rows={4}
             {...props}
           />
         </div>

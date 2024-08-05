@@ -8,10 +8,8 @@ import { NotFoundError } from "@common/Error/Components";
 import {
   ProductDetailBreadcrumb,
   ProductDetailConfiguration,
-  ProductDetailDescription,
   ProductDetailGallery,
   ProductDetailInformation,
-  ProductDetailPromotion,
   ProductDetailRating,
   ProductDetailRelationship,
 } from "./Components";
@@ -58,21 +56,17 @@ const ProductDetail = () => {
   return (
     <div className="section__container flex flex-col space-y-6">
       <ProductDetailBreadcrumb product={product} />
-      <div className="flex flex-col space-y-6">
-        <div className="flex gap-8">
-          <div className="flex w-1/2 flex-col space-y-6">
-            <ProductDetailGallery product={product} />
-            <ProductDetailDescription description={product.information} />
-            <ProductDetailRating product={product} getProduct={getProduct} />
-          </div>
-          <div className="flex w-1/2 flex-col space-y-6">
-            <ProductDetailInformation product={product} />
-            <ProductDetailPromotion />
-            <ProductDetailConfiguration product={product} />
-          </div>
-        </div>
-        <ProductDetailRelationship category={product.category} />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <ProductDetailGallery product={product} />
+        <ProductDetailInformation product={product} />
+        <ProductDetailConfiguration product={product} />
+        <ProductDetailRating
+          product={product}
+          getProduct={getProduct}
+          className="md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3"
+        />
       </div>
+      <ProductDetailRelationship category={product.category} />
     </div>
   );
 };
