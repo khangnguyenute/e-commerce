@@ -26,12 +26,12 @@ const ProfileOrderHistoryGridContentBodyTotal = ({ order }) => {
 
   return (
     <div>
-      <div className="flex space-x-2 font-semibold">
-        <div>{t("totalQuantity")}:</div> <div className="text-primary-700">{totalQuantity}</div>
-      </div>
-      <div className="flex space-x-2 font-semibold">
-        <div>{t("totalPrice")}:</div> <div className="text-primary-700">{totalPrice}</div>
-      </div>
+      <p className="font-semibold">
+        {t("totalQuantity")}: <span className="text-primary-500">{totalQuantity}</span>
+      </p>
+      <p className="font-semibold">
+        {t("totalPrice")}: <span className="text-primary-500">{totalPrice}</span>
+      </p>
     </div>
   );
 };

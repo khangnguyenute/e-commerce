@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { updateUser } from "@slices/commonSlice";
 import { pick } from "lodash";
 
-const ProfileAccountInformation = () => {
+const ProfileAccountInformation = ({ className }) => {
   const { t } = useTranslation();
   const toast = useToast();
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const ProfileAccountInformation = () => {
   }, [currentUser, reset]);
 
   return (
-    <div>
+    <div className={className}>
       <div
         role="button"
         tabIndex={0}
@@ -94,7 +94,7 @@ const ProfileAccountInformation = () => {
           isRequired
         />
         <Input className="block" control={control} disabled label={t("email")} name="email" isRequired />
-        <Button type="submit" disabled={isSubmitting} isLoading={isSubmitting}>
+        <Button size="sm" disabled={isSubmitting} isLoading={isSubmitting}>
           {t("update")}
         </Button>
       </form>

@@ -15,47 +15,48 @@ const ProfileAddressItem = ({ addressItem, onClickEdit, onClickDelete, index }) 
 
   return (
     <div
-      className={twMerge("flex justify-between rounded-lg border-2 p-6", index === "0" && "border-blue-500")}
+      className={twMerge(
+        "flex flex-col space-y-4 rounded-lg border-2 p-6",
+        index === "0" && "border-blue-500",
+      )}
     >
-      <div className="flex flex-col space-y-4">
-        <div className="flex items-center space-x-4">
-          <span className="font-bold uppercase text-blue-500">{addressItem.fullname}</span>
-          {index === "0" && (
-            <span className="rounded-xl border border-green-500 p-2 text-xs text-green-500">
-              {t("defaultAddress")}
-            </span>
-          )}
-        </div>
-        <div>
-          {t("phone")}: <span className="font-semibold">{addressItem.phone}</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span>{t("address")}:</span>
-          <div className="line-clamp-1 break-all font-semibold">
-            <span>{addressItem.address}, </span>
-            <span>{addressItem.ward?.name}, </span>
-            <span>{addressItem.district?.name}, </span>
-            <span>{addressItem.city?.name}</span>
+      <div className="flex flex-wrap-reverse items-center justify-between gap-4">
+        <span className="font-bold uppercase text-blue-500">{addressItem.fullname}</span>
+        {index === "0" && (
+          <span className="rounded-xl border border-green-500 p-2 text-xs text-green-500">
+            {t("defaultAddress")}
+          </span>
+        )}
+        <div className="flex space-x-4">
+          <div
+            role="button"
+            tabIndex={0}
+            className="cursor-pointer text-blue-500 hover:text-blue-700"
+            onClick={handleClickEdit}
+          >
+            {t("edit")}
+          </div>
+          <div
+            role="button"
+            tabIndex={0}
+            className="cursor-pointer text-red-500 hover:text-red-700"
+            onClick={handleClickDelete}
+          >
+            {t("delete")}
           </div>
         </div>
       </div>
-      <div className="flex space-x-4">
-        <div
-          role="button"
-          tabIndex={0}
-          className="cursor-pointer text-blue-500 hover:text-blue-700"
-          onClick={handleClickEdit}
-        >
-          {t("edit")}
-        </div>
-        <div
-          role="button"
-          tabIndex={0}
-          className="cursor-pointer text-red-500 hover:text-red-700"
-          onClick={handleClickDelete}
-        >
-          {t("delete")}
-        </div>
+      <div>
+        {t("phone")}:<span className="ml-2 font-semibold">{addressItem.phone}</span>
+      </div>
+      <div className="line-clamp-2">
+        {t("address")}:
+        <span className="font-semibold">
+          <span className="ml-2">{addressItem.address},</span>
+          <span className="ml-2">{addressItem.ward?.name},</span>
+          <span className="ml-2">{addressItem.district?.name},</span>
+          <span className="ml-2">{addressItem.city?.name}</span>
+        </span>
       </div>
     </div>
   );

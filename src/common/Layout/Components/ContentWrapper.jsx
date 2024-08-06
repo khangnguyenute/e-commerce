@@ -1,10 +1,10 @@
 import { Children, memo, useMemo } from "react";
-import { twMerge } from "tailwind-merge";
 
 import LayoutContentWrapperBody from "./ContentWrapperBody";
 import LayoutContentWrapperHeader from "./ContentWrapperHeader";
 import LayoutContentWrapperTab from "./ContentWrapperTab";
 import useDocumentTitle from "@hooks/useDocumentTitle";
+import { twMerge } from "tailwind-merge";
 
 const LayoutContentWrapper = ({
   actions,
@@ -21,7 +21,6 @@ const LayoutContentWrapper = ({
   tabItemClassName,
   tabHeader,
   tabs,
-  tabStyle,
   title,
   tabAction,
   onChangeTab,
@@ -50,7 +49,6 @@ const LayoutContentWrapper = ({
             activeTabItemClassName={activeTabItemClassName}
             className={tabClassName}
             itemClassName={tabItemClassName}
-            tabStyle={tabStyle}
             tabs={tabs}
             onChange={onChangeTab}
           />

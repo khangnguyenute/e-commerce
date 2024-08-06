@@ -51,8 +51,7 @@ const ProductDetailRelationship = ({ category }) => {
   }, [fetchData]);
 
   return (
-    <Section>
-      <h2 className="text-xl font-semibold">{t("relatedProducts")}</h2>
+    <Section title={t("relatedProducts")}>
       <Carousel
         gallery={productData}
         isLoading={isLoading}

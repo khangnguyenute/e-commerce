@@ -4,11 +4,9 @@ import ProfileSidebar from "./Sidebar/Sidebar";
 
 const Profile = () => {
   return (
-    <div className="section__container grid grid-cols-5 gap-6">
-      <div className="col-span-1 rounded-lg border text-slate-700 shadow-base">
-        <ProfileSidebar />
-      </div>
-      <div className="col-span-4 rounded-lg border p-6 shadow-base">
+    <div className="section__container grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-5">
+      <ProfileSidebar className="col-span-1" />
+      <div className="col-span-1 md:col-span-3 lg:col-span-4">
         <ProfileRoutes />
       </div>
     </div>

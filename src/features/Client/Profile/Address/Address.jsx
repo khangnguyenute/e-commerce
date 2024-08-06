@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { userService } from "@services/index";
 import AddressItem from "./Item";
-import { ConfirmationModal } from "@common/Components";
+import { ConfirmationModal, Section } from "@common/Components";
 import ProfileAddressModificationModal from "./ModificationModal";
 import useToast from "@hooks/useToast";
 import useDocumentTitle from "@hooks/useDocumentTitle";
@@ -63,8 +63,7 @@ const ProfileAddress = () => {
   useDocumentTitle(t("address"));
 
   return (
-    <div>
-      <div className="text-xl font-semibold">{t("address")}</div>
+    <Section title={t("address")}>
       <div
         role="button"
         tabIndex={0}
@@ -101,7 +100,7 @@ const ProfileAddress = () => {
         onEdit={userService.editAddress}
         onClose={handleCloseModal}
       />
-    </div>
+    </Section>
   );
 };
 

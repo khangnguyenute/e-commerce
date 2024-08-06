@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import ContentWrapper from "@common/Layout/Components/ContentWrapper";
 import { PROFILE_PATH } from "@constants/routeConstant";
 import ProfileOrderHistoryContainer from "./Components/Container";
+import { Section } from "@common/Components";
 
 const ProfileOrderHistory = ({ tab: defaultActivatedTab }) => {
   const { t } = useTranslation();
@@ -42,16 +43,12 @@ const ProfileOrderHistory = ({ tab: defaultActivatedTab }) => {
   useDocumentTitle(t("orderHistory"));
 
   return (
-    <div>
-      <div className="mb-6 text-xl font-semibold">{t("orderHistory")}</div>
+    <Section title={t("orderHistory")}>
       <ContentWrapper
         activatedTab={activatedTab}
-        bodyClassName="m-0 p-4 md:p-6"
-        className="mx-auto w-full"
+        className="p-0"
+        bodyClassName="p-0 md:p-0 border-0 shadow-none m-0 mt-4"
         isShowHeader={false}
-        tabClassName="bg-transparent lg:bg-gray-100 border-b-2 lg:border-b-0 border-gray-100 px-4 md:px-6"
-        tabItemClassName="px-0 mr-6 lg:mr-0 -mb-0.5 lg:mb-0 py-3 lg:px-6 border-0 lg:border-2 lg:py-3"
-        activatedTabItemClassName="border-b-2 lg:border-2 lg:border-gray-100 lg:border-transparent border-primary-700"
         tabs={tabs}
         onChangeTab={handleChangeTab}
       >
@@ -92,7 +89,7 @@ const ProfileOrderHistory = ({ tab: defaultActivatedTab }) => {
           onGetOrderHistories={orderService.getOrders}
         />
       </ContentWrapper>
-    </div>
+    </Section>
   );
 };
 

@@ -1,7 +1,7 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Avatar, Table } from "@common/Components";
+import { Table } from "@common/Components";
 import { omit } from "lodash";
 import ProfileOrderHistoryTableTotalColumn from "./TableTotalColumn";
 import ProfileOrderHistoryTablePriceColumn from "./TablePriceColumn";
@@ -21,7 +21,9 @@ const ProfileOrderHistoryProductTable = ({ data, isLoading, children, ...props }
         id: "image",
         header: t("image"),
         cell: (props) => (
-          <Avatar src={props.row.original.image} alt={props.row.original.name} className="rounded-md" />
+          <div className="h-16 max-w-24 object-cover">
+            <img src={props.row.original.image} alt={props.row.original.name} className="mx-auto h-full" />
+          </div>
         ),
       }),
       columnHelper.accessor((row) => row.name, {
@@ -45,7 +47,7 @@ const ProfileOrderHistoryProductTable = ({ data, isLoading, children, ...props }
         header: t("quantity"),
       }),
       columnHelper.display({
-        id: "actions",
+        id: "total",
         header: t("total"),
         cell: (props) => (
           <ProfileOrderHistoryTableTotalColumn

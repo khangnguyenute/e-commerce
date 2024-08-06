@@ -7,9 +7,7 @@ const ProfileOrderHistoryGridContentBody = ({ order, isDetailed }) => {
   return (
     <>
       {isDetailed && <ProfileOrderHistoryGridContentBodyInformation order={order} />}
-
       <ProfileOrderHistoryProductTable data={order.orderItems} />
-
       <ProfileOrderHistoryGridContentBodyTotal order={order} />
     </>
   );
