@@ -1,8 +1,8 @@
+import { getTwScreenWidth } from "@utils/Helpers";
 import { cloneElement, memo, useCallback, useEffect, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
 import { twMerge } from "tailwind-merge";
 import { useOnClickOutside } from "usehooks-ts";
-import { getTwScreenWidth } from "../Utils";
 
 const DropdownMenu = ({
   className,

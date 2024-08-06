@@ -11,7 +11,7 @@ const breakpoints = {
   360: {
     slidesPerView: 2,
   },
-  576: {
+  512: {
     slidesPerView: 3,
   },
   768: {
@@ -29,7 +29,7 @@ const ProductDetailRelationship = ({ category }) => {
   const { t } = useTranslation();
   const toast = useToast();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [productData, setProductData] = useState([]);
 
   const fetchData = useCallback(async () => {
@@ -55,7 +55,6 @@ const ProductDetailRelationship = ({ category }) => {
       <Carousel
         gallery={productData}
         isLoading={isLoading}
-        slidesPerView={5}
         contentClassName="h-36 xs:h-72 sm:h-80 xs:block"
         breakpoints={breakpoints}
       />

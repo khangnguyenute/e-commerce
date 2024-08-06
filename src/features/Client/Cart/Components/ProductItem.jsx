@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { AiFillDelete } from "react-icons/ai";
 import { memo, useCallback } from "react";
 import { lowerCase } from "lodash";
-import { beautifyNumber } from "@utils/Helpers";
+import { numberFormat } from "@utils/Helpers";
 import { removeItem, updateItem } from "@slices/commonSlice";
 import { InputQuantity } from "@common/Components";
 
@@ -37,9 +37,9 @@ const CartProductItem = ({ product }) => {
       <div className="grid grid-cols-5 items-center justify-items-stretch gap-4">
         <div className="col-span-2 font-medium text-slate-700">
           <p className="mr-2 font-bold text-primary-500">
-            {beautifyNumber(product.price * (1 - product.discount))}₫
+            {numberFormat(product.price * (1 - product.discount))}₫
           </p>
-          {Boolean(product.discount) && <p className="line-through">{beautifyNumber(product.price)}₫</p>}
+          {Boolean(product.discount) && <p className="line-through">{numberFormat(product.price)}₫</p>}
         </div>
         <InputQuantity
           name={`quantity.${product._id}`}

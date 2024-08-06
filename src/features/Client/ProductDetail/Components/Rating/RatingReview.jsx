@@ -8,7 +8,7 @@ const ProductDetailRatingReview = ({ data, isLoading, onGetRatings }) => {
   }
 
   return (
-    <div className="mt-2 grid grid-cols-1 gap-2">
+    <div className="mt-2 grid grid-cols-1 gap-4">
       {data.map((rating, index) => (
         <ProductDetailRatingReviewContent key={index} rating={rating} onGetRatings={onGetRatings} />
       ))}

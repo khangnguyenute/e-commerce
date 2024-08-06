@@ -13,7 +13,13 @@ const ProductBanner = () => {
   return (
     <div className="section__container grid grid-cols-2 gap-4 pb-0 sm:grid-cols-3">
       <div className="col-span-2">
-        <Carousel gallery={images} slidesPerView={1} contentClassName="rounded-md" />
+        <Carousel
+          gallery={images}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+          }}
+          contentClassName="rounded-md"
+        />
       </div>
       <div className="col-span-2 grid grid-cols-2 gap-4 sm:col-span-1 sm:grid-cols-1">
         <img

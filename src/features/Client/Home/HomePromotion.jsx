@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import useToast from "@hooks/useToast";
-import { Button, Carousel, LoadingSkeleton } from "@common/Components";
+import { Button, Carousel } from "@common/Components";
 import { productService } from "@services/index";
 import { useTranslation } from "react-i18next";
 import { isEmpty, lowerCase } from "lodash";
@@ -15,7 +15,7 @@ const breakpoints = {
   360: {
     slidesPerView: 2,
   },
-  576: {
+  512: {
     slidesPerView: 3,
   },
   768: {
@@ -34,7 +34,7 @@ const HomePromotion = ({ title, category, sliders, className }) => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [deviceData, setDeviceData] = useState([]);
 
   const getData = useCallback(async () => {
@@ -66,28 +66,23 @@ const HomePromotion = ({ title, category, sliders, className }) => {
       {sliders && !isEmpty(sliders) && (
         <Carousel
           gallery={sliders}
-          isLoading={isLoading}
           contentClassName="h-fit w-full rounded-md object-fill"
           breakpoints={{
             0: { slidesPerView: 2 },
-            500: { slidesPerView: 3 },
+            512: { slidesPerView: 3 },
           }}
         />
       )}
       <Carousel
         gallery={deviceData}
         isLoading={isLoading}
-        slidesPerView={5}
         contentClassName="h-36 xs:h-72 sm:h-80 xs:block"
         breakpoints={breakpoints}
       />
-      {isLoading ? (
-        <LoadingSkeleton className="mx-auto h-11 w-1/2 rounded-sm lg:rounded-full" />
-      ) : (
-        <Button color="light" onClick={handleClickMoreProduct} className="mx-auto w-1/2">
-          {t("viewMore")}
-        </Button>
-      )}
+
+      <Button color="light" onClick={handleClickMoreProduct} className="mx-auto w-1/2">
+        {t("viewMore")}
+      </Button>
     </div>
   );
 };

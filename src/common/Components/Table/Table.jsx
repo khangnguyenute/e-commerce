@@ -8,7 +8,7 @@ import TableContentHeader from "./TableContentHeader/TableContentHeader";
 import TableFooter from "./TableFooter";
 import TableHeader from "./TableHeader/TableHeader";
 import useWatchParam from "@hooks/useWatchParam";
-import { normalizeTableColumns } from "../Utils";
+import { normalizeTableColumns } from "@utils/Helpers";
 
 const Table = ({
   id,

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { beautifyNumber } from "@utils/Helpers";
+import { numberFormat } from "@utils/Helpers";
 import useToast from "@hooks/useToast";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
@@ -63,7 +63,7 @@ const OrderInformation = ({ order }) => {
       </div>
       <div className="font-semibold">
         <span> {t("total")}: </span>
-        <i className="text-red-700">{beautifyNumber(Number(order.totalPrice))}</i>
+        <i className="text-red-700">{numberFormat(Number(order.totalPrice))}</i>
       </div>
     </div>
   );

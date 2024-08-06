@@ -16,5 +16,4 @@ export * from "./Section";
 export * from "./Star";
 export * from "./Table";
 export * from "./ToastMessage";
-export * from "./Utils";
 export * from "./ScrollTopTop";

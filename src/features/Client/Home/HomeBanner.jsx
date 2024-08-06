@@ -49,8 +49,8 @@ const Home = () => {
           gallery={banners}
           contentClassName="h-fit w-full rounded-md object-cover shadow-base"
           breakpoints={{
-            0: { slidesPerView: 1, slidesPerGroup: 1 },
-            360: { slidesPerView: 2, slidesPerGroup: 2 },
+            0: { slidesPerView: 1 },
+            360: { slidesPerView: 2 },
           }}
         />
       </div>

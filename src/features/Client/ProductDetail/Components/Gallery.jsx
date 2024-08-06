@@ -59,6 +59,9 @@ const ProductDetailGallery = ({ product }) => {
         isThumbs
         contentClassName="mb-4 h-96 w-full object-scale-down"
         thumbsClassName="h-20 w-20 object-cover"
+        breakpoints={{
+          0: { slidesPerView: 1 },
+        }}
       />
     </div>
   );

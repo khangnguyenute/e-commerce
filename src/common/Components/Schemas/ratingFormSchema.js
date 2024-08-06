@@ -1,5 +1,5 @@
+import { generateFormSchema } from "@utils/Helpers";
 import { string } from "yup";
-import { generateFormSchema } from "../Utils";
 
 const ratingFormSchema = (t) =>
   generateFormSchema({
