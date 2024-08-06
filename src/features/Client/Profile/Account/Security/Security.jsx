@@ -12,8 +12,9 @@ import { FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ProfileAccountSecurityItem from "./SecurityItem";
+import { twMerge } from "tailwind-merge";
 
-const ProfileAccountSecurity = () => {
+const ProfileAccountSecurity = ({ className }) => {
   const { t } = useTranslation();
   const toast = useToast();
 
@@ -42,7 +43,7 @@ const ProfileAccountSecurity = () => {
 
   const handleConnectFacebook = async () => {
     if (!currentUser?.facebookId) {
-      window.open(`${baseURL}/${AUTH_API_PATH.CONNECT_SOCIAL("facebook", currentUser.userId)}`, "_self");
+      window.open(`${baseURL}${AUTH_API_PATH.CONNECT_SOCIAL("facebook", currentUser.userId)}`, "_self");
       return;
     }
 
@@ -58,7 +59,7 @@ const ProfileAccountSecurity = () => {
 
   const handleConnectGoolge = async () => {
     if (!currentUser?.googleId) {
-      window.open(`${baseURL}/${AUTH_API_PATH.CONNECT_SOCIAL("google", currentUser.userId)}`, "_self");
+      window.open(`${baseURL}${AUTH_API_PATH.CONNECT_SOCIAL("google", currentUser.userId)}`, "_self");
       return;
     }
 
@@ -73,7 +74,7 @@ const ProfileAccountSecurity = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-4 text-slate-700">
+    <div className={twMerge("flex flex-col space-y-4 text-slate-700", className)}>
       <div className="font-semibold">{t("phoneAndEmail")}</div>
       <ProfileAccountSecurityItem
         icon={<MdPhone size={24} />}

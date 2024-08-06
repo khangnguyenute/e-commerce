@@ -14,7 +14,7 @@ const ModalContent = ({
   title,
   children,
   headerClassName,
-  contentContainerClassName = "grid grid-cols-1 gap-6",
+  contentContainerClassName = "grid grid-cols-1 gap-4 sm:gap-6",
   isShowCancelButton = true,
   isShowConfirmButton = true,
   onClose,
@@ -26,7 +26,7 @@ const ModalContent = ({
     <>
       <div className="h-full w-full">
         {isShowHeader && (
-          <div className={twMerge("rounded-t-lg px-6 pt-4 sm:px-10 sm:pt-7", headerClassName)}>
+          <div className={twMerge("rounded-t-lg px-5 pt-4 sm:px-10 sm:pt-8", headerClassName)}>
             <div className="flex items-center justify-between">
               <div className="h-fit w-fit pb-2 text-lg font-semibold">{title}</div>
               <div
@@ -43,7 +43,7 @@ const ModalContent = ({
         )}
         <div
           className={twMerge(
-            "grid w-full grid-cols-1 gap-4 px-6 py-5 sm:gap-6 sm:px-10 sm:py-8",
+            "grid w-full grid-cols-1 gap-4 px-5 py-4 sm:gap-6 sm:px-10 sm:py-8",
             contentContainerClassName,
           )}
         >
@@ -51,7 +51,7 @@ const ModalContent = ({
         </div>
       </div>
       {isShowFooter && (
-        <div className="flex items-center justify-end space-x-6 rounded-b-lg bg-gray-50 px-10 py-6">
+        <div className="flex items-center justify-end space-x-6 rounded-b-lg bg-gray-50 px-5 py-4 sm:px-10 sm:py-8">
           {isShowCancelButton && (
             <Button
               className="rounded-md border-2 border-gray-200 px-6 shadow-none ring-0"

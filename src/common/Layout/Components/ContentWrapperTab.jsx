@@ -5,40 +5,29 @@ import { twMerge } from "tailwind-merge";
 import ContentWrapperTabItem from "./ContentWrapperTabItem";
 
 const LayoutContentWrapperTab = ({
-  activeBarClassName,
   activatedTab,
   activeTabItemClassName,
   className,
   itemClassName,
   tabs,
-  tabStyle,
   onChange,
 }) => {
   const containerRef = useRef(null);
   const activeBarRef = useRef(null);
-  const scrollMaskRef = useRef(null);
 
-  const handleActiveTab = useCallback(
-    (tabElement) => {
-      const activeBarElement = activeBarRef.current;
+  const handleActiveTab = useCallback((tabElement) => {
+    const activeBarElement = activeBarRef.current;
 
-      if (!tabElement || !activeBarElement) {
-        return;
-      }
+    if (!tabElement || !activeBarElement) {
+      return;
+    }
 
-      const { width } = tabElement.getBoundingClientRect();
-      const { offsetLeft } = tabElement;
+    const { width } = tabElement.getBoundingClientRect();
+    const { offsetLeft } = tabElement;
 
-      if (tabStyle === "line") {
-        activeBarElement.style.width = `${width - 24}px`;
-        activeBarElement.style.left = `${offsetLeft + 12}px`;
-      } else {
-        activeBarElement.style.width = `${width - 52}px`;
-        activeBarElement.style.left = `${offsetLeft + 26}px`;
-      }
-    },
-    [tabStyle],
-  );
+    activeBarElement.style.width = `${width - 52}px`;
+    activeBarElement.style.left = `${offsetLeft + 26}px`;
+  }, []);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleActiveTabDebounced = useCallback(debounce(handleActiveTab, 50), [handleActiveTab]);
@@ -65,8 +54,7 @@ const LayoutContentWrapperTab = ({
   return (
     <div
       className={twMerge(
-        "relative left-0 z-10 -mb-0.5 flex select-none items-center rounded-t-lg p-4 pb-0",
-        tabStyle === "line" && "-mb-0.5 bg-transparent",
+        "relative z-10 flex flex-wrap items-center justify-center gap-4 rounded-t-lg sm:gap-6",
         className,
       )}
       ref={containerRef}
@@ -78,20 +66,11 @@ const LayoutContentWrapperTab = ({
           id={tab.id}
           isActive={activatedTab === tab.id}
           key={tab.id}
-          style={tabStyle}
           title={tab.title}
           onChange={onChange}
           onActive={handleActiveTabDebounced}
         />
       ))}
-      <span
-        className={twMerge(
-          "absolute bottom-px left-6 border-t-2 border-transparent duration-200 lg:border-primary-700",
-          activeBarClassName,
-        )}
-        ref={activeBarRef}
-      />
-      <div className={twMerge("absolute inset-y-0 z-10 cursor-grab bg-transparent")} ref={scrollMaskRef} />
     </div>
   );
 };

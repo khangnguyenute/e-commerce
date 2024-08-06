@@ -1,13 +1,17 @@
-import { memo, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProfileAccountSecurityModificationPassword from "./ModificationPassword";
 import ProfileAccountSecurityModificationEmail from "./ModificationEmail";
 import ProfileAccountSecurityModificationPhone from "./ModificationPhone";
+import { Section } from "@common/Components";
+import { BsChevronLeft } from "react-icons/bs";
+import { PROFILE_PATH } from "@constants/routeConstant";
 
 const ProfileAccountSecurityModification = () => {
   const { t } = useTranslation();
   const { tab } = useParams();
+  const navigate = useNavigate();
 
   const title = useMemo(() => {
     if (tab === "password") {
@@ -33,11 +37,23 @@ const ProfileAccountSecurityModification = () => {
     }
   }, [tab]);
 
+  const handleClickBack = useCallback(() => {
+    navigate(PROFILE_PATH.ACCOUNT);
+  }, [navigate]);
+
   return (
-    <div>
-      <div className="mb-6 text-xl font-semibold">{title}</div>
+    <Section title={title}>
       <div className="mx-auto w-1/2">{children}</div>
-    </div>
+      <div
+        role="button"
+        tabIndex={0}
+        className="mt-4 flex items-center text-blue-500 hover:text-blue-700"
+        onClick={handleClickBack}
+      >
+        <BsChevronLeft />
+        <span>{t("back")}</span>
+      </div>
+    </Section>
   );
 };
 

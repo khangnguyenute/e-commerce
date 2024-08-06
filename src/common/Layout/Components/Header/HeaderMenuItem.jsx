@@ -22,7 +22,7 @@ const HeaderMenuItem = ({ title, link, icon }) => {
       role="button"
       tabIndex={0}
       className={twMerge(
-        "flex items-center space-x-1 font-medium text-slate-700 duration-200 hover:text-blue-700",
+        "flex items-center space-x-1 text-slate-700 duration-200 hover:text-blue-700",
         isActived && "text-blue-700",
       )}
       onClick={handleClick}

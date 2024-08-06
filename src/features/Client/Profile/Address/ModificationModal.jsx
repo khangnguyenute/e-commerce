@@ -187,7 +187,7 @@ const ProfileAddressModificationModal = ({
         name="fullname"
         isRequired
       />
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid gap-6 xs:grid-cols-2">
         <Input
           className="block"
           control={control}

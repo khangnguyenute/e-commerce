@@ -1,11 +1,12 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import useToast from "@hooks/useToast";
-import { Button, Carousel, LoadingSkeleton, Section } from "@common/Components";
+import { Button, Carousel, LoadingSkeleton } from "@common/Components";
 import { productService } from "@services/index";
 import { useTranslation } from "react-i18next";
 import { isEmpty, lowerCase } from "lodash";
 import { useNavigate } from "react-router-dom";
 import { CLIENT_PATH } from "@constants/routeConstant";
+import { twMerge } from "tailwind-merge";
 
 const breakpoints = {
   0: {
@@ -58,7 +59,10 @@ const HomePromotion = ({ title, category, sliders, className }) => {
   }, [getData]);
 
   return (
-    <Section isLoading={isLoading} title={title} className={className}>
+    <div className={twMerge("flex flex-col space-y-4 rounded-xl py-4 md:py-6 lg:py-8", className)}>
+      <h1 className="w-full text-center text-2xl font-bold uppercase text-white sm:text-4xl lg:text-5xl">
+        {title}
+      </h1>
       {sliders && !isEmpty(sliders) && (
         <Carousel
           gallery={sliders}
@@ -84,7 +88,7 @@ const HomePromotion = ({ title, category, sliders, className }) => {
           {t("viewMore")}
         </Button>
       )}
-    </Section>
+    </div>
   );
 };
 

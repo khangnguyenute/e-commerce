@@ -15,10 +15,10 @@ const ProfileOrderHistoryGridContentHeader = ({ order, onClickBack }) => {
   const handleCancelOrder = useCallback(
     async (orderId) => {
       try {
-        await orderService.updateOrderById(orderId, { status: "cancel" });
+        await orderService.updateOrderById(orderId, { status: "canceled" });
 
         toast.success(t("cancelOrderSuccessfully"));
-        onClickBack("cancel");
+        onClickBack("canceled");
       } catch (error) {
         toast.error(t("unknown"));
       }
@@ -29,10 +29,9 @@ const ProfileOrderHistoryGridContentHeader = ({ order, onClickBack }) => {
   return (
     <div>
       <div className="flex justify-between font-semibold">
-        <div className="font-semibold">
-          <span>{t("orderId")}: </span>
-          <span className="text-blue-500">{order._id}</span>
-        </div>
+        <p className="font-semibold">
+          {t("orderId")}:<span className="ml-2 text-blue-500">{order._id}</span>
+        </p>
 
         {isAllowedCancellation && (
           <div
@@ -47,10 +46,9 @@ const ProfileOrderHistoryGridContentHeader = ({ order, onClickBack }) => {
         )}
       </div>
 
-      <div className="font-semibold">
-        <span>{t("status")}: </span>
-        <span className="text-blue-500">{t(order.status)}</span>
-      </div>
+      <p className="font-semibold">
+        {t("status")}:<span className="ml-2 text-blue-500">{t(order.status)}</span>
+      </p>
     </div>
   );
 };
