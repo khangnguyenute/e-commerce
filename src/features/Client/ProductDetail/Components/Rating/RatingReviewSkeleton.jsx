@@ -2,7 +2,7 @@ import { LoadingSkeleton } from "@common/Components";
 
 const ProductDetailRatingReviewSkeleton = () => {
   return (
-    <div className="flex flex-col space-y-4 rounded-xl border bg-white px-4 py-2 shadow-lg">
+    <div className="mt-2 flex flex-col space-y-4 rounded-xl border bg-white px-4 py-2 shadow-lg">
       <div className="flex flex-col space-y-2">
         <div className="flex items-center space-x-2 font-semibold">
           <LoadingSkeleton className="h-6 w-40" />

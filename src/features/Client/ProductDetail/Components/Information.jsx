@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { beautifyNumber } from "@utils/Helpers";
+import { numberFormat } from "@utils/Helpers";
 import useToast from "@hooks/useToast";
 import { addItem } from "@slices/commonSlice";
 import { Button, InputQuantity } from "@common/Components";
@@ -36,11 +36,11 @@ const ProductDetailInformation = ({ product }) => {
           <span className="block w-28">{t("price")}:</span>
           <div className="space-x-4">
             <span className="text-xl font-semibold text-primary-600">
-              {beautifyNumber(Math.round(product?.price * (1 - parseFloat(product?.discount))))}₫
+              {numberFormat(Math.round(product?.price * (1 - parseFloat(product?.discount))))}₫
             </span>
             {Boolean(product?.discount) && (
               <>
-                <i className="text-gray-600 line-through">{beautifyNumber(product?.price)}₫</i>
+                <i className="text-gray-600 line-through">{numberFormat(product?.price)}₫</i>
                 <span className="text-primary-600">(-{product?.discount * 100}%)</span>
               </>
             )}

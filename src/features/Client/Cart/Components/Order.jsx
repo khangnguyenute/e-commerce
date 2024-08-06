@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useFormContext } from "react-hook-form";
 import useToast from "@hooks/useToast";
 import { Button, Input } from "@common/Components";
-import { beautifyNumber } from "@utils/Helpers";
+import { numberFormat } from "@utils/Helpers";
 import { voucherService } from "@services/index";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -48,15 +48,15 @@ const CartOrder = ({ discount, totalPrice, isSubmitting, onApplyDiscount, onSubm
       </div>
       <div className="flex justify-between">
         <span className="font-semibold">{t("temporary")}:</span>
-        <span className="font-bold text-primary-700">{beautifyNumber(totalPrice)}₫</span>
+        <span className="font-bold text-primary-700">{numberFormat(totalPrice)}₫</span>
       </div>
       <div className="flex justify-between">
         <span className="font-semibold">{t("discount")}:</span>
-        <span className="font-bold text-primary-700">{beautifyNumber(discount)}₫</span>
+        <span className="font-bold text-primary-700">{numberFormat(discount)}₫</span>
       </div>
       <div className="flex justify-between">
         <span className="font-semibold">{t("total")}:</span>
-        <span className="font-bold text-primary-700">{beautifyNumber(totalPrice - discount)}₫</span>
+        <span className="font-bold text-primary-700">{numberFormat(totalPrice - discount)}₫</span>
       </div>
       <div>
         <p className="text-green-600">* {t("freeShipping")}</p>

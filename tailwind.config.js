@@ -7,6 +7,11 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        ...defaultTheme.screens,
+        xs: "360px",
+        sm: "512px",
+      },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
@@ -79,10 +84,6 @@ module.exports = {
       },
       fontSize: {
         xxs: "12px",
-      },
-      screens: {
-        ...defaultTheme.screens,
-        xs: "360px",
       },
     },
   },

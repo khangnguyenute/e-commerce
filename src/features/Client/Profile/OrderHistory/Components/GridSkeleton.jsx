@@ -28,9 +28,7 @@ const ProfileOrderHistoryGridSkeleton = ({ isDetailed }) => {
               </div>
             </div>
           )}
-
           <LoadingSkeleton className="mt-4 h-52 w-full rounded-lg" />
-
           <LoadingSkeleton className="mt-4 h-5 w-14" />
         </div>
       ))}

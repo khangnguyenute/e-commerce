@@ -8,7 +8,7 @@ import EmptyUploadInput from "./EmptyUploadInput";
 import UploadInputContent from "./UploadInputContent";
 import useToast from "@hooks/useToast";
 import { uploadService } from "@services/index";
-import { getImageURLFromFile } from "../../Utils";
+import { getImageURLFromFile } from "@utils/Helpers";
 
 const UncontrolledUploadInput = ({
   className,

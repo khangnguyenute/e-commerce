@@ -12,11 +12,7 @@ const HeaderLoginButton = () => {
     navigate(AUTH_API_PATH.LOGIN);
   }, [navigate]);
 
-  return (
-    <Button onClick={navigateLogin}>
-      {t("login")}
-    </Button>
-  );
+  return <Button onClick={navigateLogin}>{t("login")}</Button>;
 };
 
 export default memo(HeaderLoginButton);

@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { twMerge } from "tailwind-merge";
 import { lowerCase } from "lodash";
-import { beautifyNumber } from "../Utils";
 import { CLIENT_PATH } from "@constants/routeConstant";
 import { memo, useCallback } from "react";
 import { BiSolidDiscount } from "react-icons/bi";
+import { numberFormat } from "@utils/Helpers";
 
 const ProductCard = ({ data, className }) => {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const ProductCard = ({ data, className }) => {
         </p>
         <p className="mb-1 font-medium text-slate-700">
           <span className="mr-2 font-bold text-primary-500">
-            {beautifyNumber(data?.price * (1 - data?.discount))}
+            {numberFormat(data?.price * (1 - data?.discount))}
           </span>
           {Boolean(data?.discount) && <span>-{data?.discount * 100}%</span>}
         </p>

@@ -7,7 +7,7 @@ import { useOnClickOutside } from "usehooks-ts";
 
 import DatePicker from "./DatePicker";
 import DatePickerSelectRange from "./DatePickerSelectRange";
-import { calculateDatePickerRange, getTwScreenWidth } from "../Utils";
+import { calculateDatePickerRange, getTwScreenWidth } from "@utils/Helpers";
 
 const DatePickerDropdown = ({
   containerRef,

@@ -72,52 +72,50 @@ const ProductDetailRatingReviewContent = ({ rating, onGetRatings }) => {
   }, [reset, isExpand]);
 
   return (
-    <div className="flex flex-col space-y-4 rounded-xl border bg-white px-4 py-2 shadow-lg">
-      <div className="flex flex-col space-y-2">
-        <div className="flex items-center space-x-2 font-semibold">
-          <div>{rating.user.fullname}</div>
-          <Star value={rating.star} />
-        </div>
-        <p>{rating.content}</p>
-        <div
-          role="button"
-          tabIndex={0}
-          className="flex w-fit cursor-pointer items-center space-x-2 text-blue-500 hover:text-blue-700"
-          onClick={handleToggleShowDiscuss}
-        >
-          <div>{rating?.discuss.length}</div>
-          <BsFillChatDotsFill />
-        </div>
-        {isExpand && rating._id === currentRating._id && (
-          <div>
-            <div className="flex items-center justify-between space-x-4">
-              <div className="w-full">
-                <Input className="block" size="sm" control={control} disabled={isSubmitting} name="content" />
-              </div>
-              <Button
-                isLoading={isSubmitting}
-                size="sm"
-                color="blue"
-                onClick={handleSubmit}
-                className="lg:rounded-md"
-              >
-                <BsFillSendPlusFill />
-              </Button>
-            </div>
-
-            <div className="mt-2">
-              {rating?.discuss?.reverse()?.map((item, index) => {
-                return (
-                  <div className="mb-2 rounded-lg border p-3 text-sm shadow-sm" key={index}>
-                    <p className="font-bold">{item.currentUser?.fullname}</p>
-                    <p>{item.content}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+    <div className="flex flex-col space-y-2 rounded-lg border bg-white px-4 py-2 shadow-base">
+      <div className="flex items-center space-x-2 font-semibold">
+        <div>{rating.user.fullname}</div>
+        <Star value={rating.star} />
       </div>
+      <p>{rating.content}</p>
+      <div
+        role="button"
+        tabIndex={0}
+        className="flex w-fit cursor-pointer items-center space-x-2 text-blue-500 hover:text-blue-700"
+        onClick={handleToggleShowDiscuss}
+      >
+        <div>{rating?.discuss.length}</div>
+        <BsFillChatDotsFill />
+      </div>
+      {isExpand && rating._id === currentRating._id && (
+        <div>
+          <div className="flex items-center justify-between space-x-4">
+            <div className="w-full">
+              <Input className="block" size="sm" control={control} disabled={isSubmitting} name="content" />
+            </div>
+            <Button
+              isLoading={isSubmitting}
+              size="sm"
+              color="blue"
+              onClick={handleSubmit}
+              className="lg:rounded-md"
+            >
+              <BsFillSendPlusFill />
+            </Button>
+          </div>
+
+          <div className="mt-2">
+            {rating?.discuss?.reverse()?.map((item, index) => {
+              return (
+                <div className="mb-2 rounded-lg border p-3 text-sm shadow-sm" key={index}>
+                  <p className="font-bold">{item.currentUser?.fullname}</p>
+                  <p>{item.content}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

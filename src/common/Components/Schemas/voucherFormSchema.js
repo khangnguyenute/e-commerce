@@ -1,5 +1,5 @@
+import { generateFormSchema } from "@utils/Helpers";
 import { number, string } from "yup";
-import { generateFormSchema } from "../Utils";
 
 const voucherFormSchema = (t) =>
   generateFormSchema({
